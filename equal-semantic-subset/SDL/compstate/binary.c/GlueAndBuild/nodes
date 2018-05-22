@@ -1,0 +1,19 @@
+--  This file was generated automatically: DO NOT MODIFY IT !
+
+--  This file contains the description of the system distribution.
+--  It is an input file for the TASTE ORCHESTRATOR
+
+* chip PLATFORM_NATIVE
+gui
+compstate
+chip_taste_api
+vt_gui_out_msg
+vt_gui_gui_polling_gui
+vt_compstate_switch_on
+vt_compstate_switch_off
+vt_compstate_restart
+vt_compstate_start_recording
+vt_compstate_pause
+vt_compstate_resume
+vt_compstate_stop_recording
+vt_compstate_fail

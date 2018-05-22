@@ -1,0 +1,28 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM parallel;
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL in_msg (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (MyString);
+
+	CHANNEL c
+		FROM ENV TO parallel WITH in_msg;
+		FROM parallel TO ENV WITH out_msg;
+	ENDCHANNEL;
+
+	BLOCK parallel;
+
+		SIGNALROUTE r
+			FROM ENV TO parallel WITH in_msg;
+			FROM parallel TO ENV WITH out_msg;
+
+		CONNECT c and r;
+
+		PROCESS parallel REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

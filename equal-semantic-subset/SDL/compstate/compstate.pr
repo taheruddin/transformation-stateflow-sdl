@@ -1,0 +1,151 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process compstate;
+    state ON;
+    substructure
+        in (recovered);
+        out (troubleshoot);
+            /* CIF procedure (449, 36), (70, 35) */
+            procedure exit;
+                /* CIF START (77, 44), (70, 35) */
+                START;
+                    /* CIF output (50, 99), (124, 35) */
+                    output out_msg('exit');
+                    /* CIF return (94, 154), (35, 35) */
+                    return ;
+            endprocedure;
+            /* CIF procedure (355, 36), (70, 35) */
+            procedure entry;
+                /* CIF START (67, 68), (70, 35) */
+                START;
+                    /* CIF output (40, 123), (124, 35) */
+                    output out_msg('entry');
+                    /* CIF return (84, 173), (35, 35) */
+                    return ;
+            endprocedure;
+            /* CIF START (1131, 123), (97, 35) */
+            START recovered ;
+                /* CIF NEXTSTATE (1144, 178), (70, 35) */
+                NEXTSTATE READY;
+            /* CIF START (85, 136), (70, 35) */
+            START;
+                /* CIF NEXTSTATE (85, 191), (70, 35) */
+                NEXTSTATE READY;
+            /* CIF state (49, 37), (70, 35) */
+            state READY;
+            endstate;
+            /* CIF state (141, 37), (95, 35) */
+            state RECORDING;
+            endstate;
+            /* CIF state (265, 133), (95, 35) */
+            state RECORDING;
+                /* CIF input (274, 256), (76, 35) */
+                input pause(w);
+                    /* CIF output (242, 332), (139, 35) */
+                    output out_msg('PAUSED');
+                    /* CIF NEXTSTATE (276, 413), (71, 35) */
+                    NEXTSTATE PAUSED;
+            endstate;
+            /* CIF state (260, 36), (71, 35) */
+            state PAUSED;
+            endstate;
+            /* CIF state (457, 130), (71, 35) */
+            state PAUSED;
+                /* CIF input (450, 259), (85, 35) */
+                input resume(w);
+                    /* CIF output (412, 333), (161, 35) */
+                    output out_msg('RECORDING');
+                    /* CIF NEXTSTATE (445, 410), (95, 35) */
+                    NEXTSTATE RECORDING;
+            endstate;
+            /* CIF state (621, 129), (95, 35) */
+            state RECORDING;
+                /* CIF input (602, 258), (133, 35) */
+                input stop_recording(w);
+                    /* CIF output (604, 330), (128, 35) */
+                    output out_msg('READY');
+                    /* CIF NEXTSTATE (633, 409), (70, 35) */
+                    NEXTSTATE READY;
+            endstate;
+            /* CIF state (790, 132), (71, 35) */
+            state PAUSED;
+                /* CIF input (759, 258), (133, 35) */
+                input stop_recording(w);
+                    /* CIF output (761, 331), (128, 35) */
+                    output out_msg('READY');
+                    /* CIF NEXTSTATE (790, 410), (70, 35) */
+                    NEXTSTATE READY;
+            endstate;
+            /* CIF state (946, 127), (95, 35) */
+            state RECORDING;
+                /* CIF input (958, 253), (70, 35) */
+                input fail(w);
+                    /* CIF output (900, 327), (186, 35) */
+                    output out_msg('going out of ON');
+                    /* CIF return (975, 406), (35, 35) */
+                    return troubleshoot;
+            endstate;
+            /* CIF state (85, 191), (70, 35) */
+            state READY;
+                /* CIF input (53, 263), (135, 35) */
+                input start_recording(w);
+                    /* CIF output (40, 338), (161, 35) */
+                    output out_msg('RECORDING');
+                    /* CIF NEXTSTATE (73, 419), (95, 35) */
+                    NEXTSTATE RECORDING;
+            endstate;
+    endsubstructure;
+    /* CIF TEXT (814, 49), (143, 81) */
+    dcl w MyString;
+    timer t;
+    dcl length MyReal;
+    /* CIF ENDTEXT */
+    /* CIF START (367, 52), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (367, 130), (70, 35) */
+        NEXTSTATE OFF;
+    /* CIF state (507, 50), (70, 35) */
+    state OFF;
+    endstate;
+    /* CIF state (611, 50), (70, 35) */
+    state ON;
+    endstate;
+    /* CIF state (1037, 52), (70, 35) */
+    state ON;
+    endstate;
+    /* CIF state (675, 362), (73, 35) */
+    state FAULTY;
+        /* CIF input (671, 417), (83, 35) */
+        input restart(w);
+            /* CIF output (621, 472), (182, 35) */
+            output out_msg('READY in ON');
+            /* CIF NEXTSTATE (642, 527), (140, 35) */
+            NEXTSTATE ON via RECOVERED;
+    endstate;
+    /* CIF state (741, 195), (70, 35) */
+    state ON;
+        /* CIF input (503, 250), (103, 35) */
+        input switch_off(w);
+            /* CIF output (498, 305), (113, 35) */
+            output out_msg('OFF');
+            /* CIF NEXTSTATE (519, 360), (70, 35) */
+            NEXTSTATE OFF;
+        /* CIF connect (712, 250), (0, 35) */
+        connect troubleshoot;
+            /* CIF output (642, 306), (139, 35) */
+            output out_msg('FAULTY');
+            /* CIF NEXTSTATE (675, 362), (73, 35) */
+            NEXTSTATE FAULTY;
+    endstate;
+    /* CIF state (710, 49), (73, 35) */
+    state SERVICE;
+    endstate;
+    /* CIF state (367, 130), (70, 35) */
+    state OFF;
+        /* CIF input (352, 206), (100, 35) */
+        input switch_on(w);
+            /* CIF output (348, 289), (108, 35) */
+            output out_msg('ON');
+            /* CIF NEXTSTATE (367, 344), (70, 35) */
+            NEXTSTATE ON;
+    endstate;
+endprocess compstate;

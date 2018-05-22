@@ -1,0 +1,46 @@
+-- Automatically Generated - For use with AADL2GlueC only - Do NOT modify! --
+
+SUBPROGRAM artificial_resume
+FEATURES
+	w:IN PARAMETER DataView::MyString {encoding=>NATIVE;};
+END artificial_resume;
+
+SUBPROGRAM IMPLEMENTATION artificial_resume.C
+PROPERTIES
+	FV_Name => "vt_compstate_resume";
+	Source_Language => C;
+END artificial_resume.C;
+
+SUBPROGRAM resume
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END resume;
+
+SUBPROGRAM IMPLEMENTATION resume.C
+PROPERTIES
+	FV_Name => "vt_compstate_resume";
+	Source_Language => C;
+END resume.C;
+
+SUBPROGRAM out_msg_vt
+FEATURES
+	msg:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END out_msg_vt;
+
+SUBPROGRAM IMPLEMENTATION out_msg_vt.C
+PROPERTIES
+	FV_Name => "vt_compstate_resume";
+	Source_Language => C;
+END out_msg_vt.C;
+
+SUBPROGRAM check_queue_vt
+FEATURES
+	res:IN PARAMETER DataView::T_Boolean {encoding=>NATIVE;};
+END check_queue_vt;
+
+SUBPROGRAM IMPLEMENTATION check_queue_vt.C
+PROPERTIES
+	FV_Name => "vt_compstate_resume";
+	Source_Language => C;
+END check_queue_vt.C;
+

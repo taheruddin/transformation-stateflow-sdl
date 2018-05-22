@@ -1,0 +1,49 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM compstate;
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL switch_on (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL switch_off (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL restart (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL start_recording (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL pause (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL resume (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL stop_recording (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL fail (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (MyString);
+
+	CHANNEL c
+		FROM ENV TO compstate WITH switch_on,switch_off,restart,start_recording,pause,resume,stop_recording,fail;
+		FROM compstate TO ENV WITH out_msg;
+	ENDCHANNEL;
+
+	BLOCK compstate;
+
+		SIGNALROUTE r
+			FROM ENV TO compstate WITH switch_on,switch_off,restart,start_recording,pause,resume,stop_recording,fail;
+			FROM compstate TO ENV WITH out_msg;
+
+		CONNECT c and r;
+
+		PROCESS compstate REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

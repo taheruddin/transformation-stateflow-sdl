@@ -1,0 +1,86 @@
+-- Automatically Generated - For use with AADL2GlueC only - Do NOT modify! --
+
+SUBPROGRAM artificial_gui_polling_gui
+END artificial_gui_polling_gui;
+
+SUBPROGRAM IMPLEMENTATION artificial_gui_polling_gui.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END artificial_gui_polling_gui.C;
+
+SUBPROGRAM gui_polling_gui
+END gui_polling_gui;
+
+SUBPROGRAM IMPLEMENTATION gui_polling_gui.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END gui_polling_gui.C;
+
+SUBPROGRAM get_init_tmpr_vt
+FEATURES
+	init_tmpr:OUT PARAMETER DataView::T_Int32 {encoding=>NATIVE;};
+END get_init_tmpr_vt;
+
+SUBPROGRAM IMPLEMENTATION get_init_tmpr_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END get_init_tmpr_vt.C;
+
+SUBPROGRAM get_init_water_vt
+FEATURES
+	init_water:OUT PARAMETER DataView::T_Int32 {encoding=>NATIVE;};
+END get_init_water_vt;
+
+SUBPROGRAM IMPLEMENTATION get_init_water_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END get_init_water_vt.C;
+
+SUBPROGRAM for_water_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END for_water_vt;
+
+SUBPROGRAM IMPLEMENTATION for_water_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END for_water_vt.C;
+
+SUBPROGRAM for_water_tmpr_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END for_water_tmpr_vt;
+
+SUBPROGRAM IMPLEMENTATION for_water_tmpr_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END for_water_tmpr_vt.C;
+
+SUBPROGRAM for_coffee_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END for_coffee_vt;
+
+SUBPROGRAM IMPLEMENTATION for_coffee_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END for_coffee_vt.C;
+
+SUBPROGRAM for_ticking_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END for_ticking_vt;
+
+SUBPROGRAM IMPLEMENTATION for_ticking_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END for_ticking_vt.C;
+

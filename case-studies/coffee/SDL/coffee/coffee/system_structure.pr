@@ -1,0 +1,43 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM coffee;
+
+	/* CIF Keep Specific Geode PARAMNAMES init_tmpr */
+	SIGNAL get_init_tmpr (T_Int32);
+
+	/* CIF Keep Specific Geode PARAMNAMES init_water */
+	SIGNAL get_init_water (T_Int32);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL for_water (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL for_water_tmpr (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL for_coffee (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL for_ticking (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (MyString);
+
+	CHANNEL c
+		FROM ENV TO coffee WITH get_init_tmpr,get_init_water,for_water,for_water_tmpr,for_coffee,for_ticking;
+		FROM coffee TO ENV WITH out_msg;
+	ENDCHANNEL;
+
+	BLOCK coffee;
+
+		SIGNALROUTE r
+			FROM ENV TO coffee WITH get_init_tmpr,get_init_water,for_water,for_water_tmpr,for_coffee,for_ticking;
+			FROM coffee TO ENV WITH out_msg;
+
+		CONNECT c and r;
+
+		PROCESS coffee REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

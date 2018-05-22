@@ -1,0 +1,91 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV SPARK_05
+
+U taste_dataview%b	taste_dataview.adb	e191cca3 NE OO PK KU
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+
+U taste_dataview%s	taste_dataview.ads	571fca1b EE NE OO PK KU
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W system%s		system.ads		system.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D adaasn1rtl.ads	20180522175356 157756a2 adaasn1rtl%s
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180522175356 08c4ff04 taste_basictypes%s
+D taste_dataview.ads	20180522175356 8c5bf7f8 taste_dataview%s
+D taste_dataview.adb	20180522175356 707992fd taste_dataview%b
+X 4 adaasn1rtl.ads
+9K9*adaasn1rtl 898e15 9|2w6 3r5 4r10 5r10 6r10 7r10 8r10 20r34 35r77 44r26
+. 54r73 10|2w6 4r10 5r10 6r10 19r77 21r11 29r12 46r73 48r11 56r12
+16M9*BIT 9|8r21 10|6r21
+17A9*BitArray(16M9)<integer> 9|5r21
+21M12*Asn1Byte{5|62M9}
+22A9*OctetBuffer(21M12)<integer> 9|4r21 20r45
+24I12*Asn1Int{5|54I9} 9|7r21 10|5r21
+25M12*Asn1UInt{5|76M9} 9|6r21 10|4r21
+26F12*Asn1Real{long_float} 9|44r37
+45V13*Asn1Real_Equal{boolean} 10|63s12
+94R10*ASN1_RESULT 97e15 9|35r88 54r84 10|19r88 21r22 29r23 46r84 48r22 56r23
+95b10*Success{boolean} 10|29m36 56m36
+96i10*ErrorCode{integer} 10|29m88 56m124
+X 5 interfac.ads
+54I9*Integer_64<long_long_integer>
+62M9*Unsigned_8
+76M9*Unsigned_64
+X 6 system.ads
+37K9*System 156e11 9|9w6
+X 8 taste_basictypes.ads
+13K9*TASTE_BasicTypes 116e21 9|10w6 10|3w6
+X 9 taste_dataview.ads
+14K9*TASTE_Dataview 69l5 69e19 10|9b14 68l5 68t19
+19I9*asn1SccMyString_index{integer} 20r57
+20A9*asn1SccMyString_array{4|22A9}<integer> 24r13 10|16r49
+21I9*asn1SccMyString_length_index{integer} 23r14
+22R6*asn1SccMyString 25e11 33r38 35r53 37r47 39r30 10|13r38 16r12 19r53 33r47
+23i5*Length{21I9} 10|16m29 29r57 29r72 35r46 37r18 37r32
+24a5*Data{20A9} 10|16m41 37r53 37r72
+27i1*asn1SccMyString_REQUIRED_BYTES_FOR_ENCODING{integer}
+28i1*asn1SccMyString_REQUIRED_BITS_FOR_ENCODING{integer}
+29i1*asn1SccMyString_REQUIRED_BYTES_FOR_ACN_ENCODING{integer}
+30i1*asn1SccMyString_REQUIRED_BITS_FOR_ACN_ENCODING{integer}
+31i1*asn1SccMyString_REQUIRED_BYTES_FOR_XER_ENCODING{integer}
+33V10*asn1SccMyString_Init{22R6} 10|13b10 17l5 17t25
+35V10*asn1SccMyString_IsConstraintValid{4|94R10} 35>44 10|19b10 31l5 31t38
+35r44 val{22R6} 10|19b44 29r53 29r68
+37V10*asn1SccMyString_Equal{boolean} 37>32 37>38 39r70 10|33b10 38l5 38t26
+37r32 val1{22R6} 10|33b32 35r41 37r13 37r48
+37r38 val2{22R6} 10|33b38 37r27 37r67
+39V11*"="=39:70{boolean}
+39r15 val1{22R6}
+39r21 val2{22R6}
+41i1*ERR_asn1SccMyString{integer} 10|29r101
+44F9*asn1SccMyReal{4|26F12} 52r36 54r51 56r45 10|40r36 46r51 60r45
+46i1*asn1SccMyReal_REQUIRED_BYTES_FOR_ENCODING{integer}
+47i1*asn1SccMyReal_REQUIRED_BITS_FOR_ENCODING{integer}
+48i1*asn1SccMyReal_REQUIRED_BYTES_FOR_ACN_ENCODING{integer}
+49i1*asn1SccMyReal_REQUIRED_BITS_FOR_ACN_ENCODING{integer}
+50i1*asn1SccMyReal_REQUIRED_BYTES_FOR_XER_ENCODING{integer}
+52V10*asn1SccMyReal_Init{44F9} 10|40b10 44l5 44t23
+54V10*asn1SccMyReal_IsConstraintValid{4|94R10} 54>42 10|46b10 58l5 58t36
+54f42 val{44F9} 10|46b42 56r79 56r87
+56V10*asn1SccMyReal_Equal{boolean} 56>30 56>36 10|60b10 64l5 64t24
+56f30 val1{44F9} 10|60b30 63r27
+56f36 val2{44F9} 10|60b36 63r33
+60i1*ERR_asn1SccMyReal{integer} 10|56r137
+X 10 taste_dataview.adb
+21r5 ret{4|94R10} 29m5 30r12
+35I13 Slice{natural} 37r58 37r77
+48r5 ret{4|94R10} 56m5 57r12
+

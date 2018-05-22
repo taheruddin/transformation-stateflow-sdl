@@ -1,0 +1,11 @@
+--  This file was generated automatically: DO NOT MODIFY IT !
+
+--  This file contains the description of the system distribution.
+--  It is an input file for the TASTE ORCHESTRATOR
+
+* chip PLATFORM_NATIVE
+gui
+guard_3
+chip_taste_api
+vt_gui_out_msg
+vt_gui_gui_polling_gui

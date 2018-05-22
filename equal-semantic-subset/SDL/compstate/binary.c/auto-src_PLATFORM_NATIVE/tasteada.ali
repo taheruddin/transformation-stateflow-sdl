@@ -1,0 +1,33 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+
+U tasteada%s		tasteada.ads		3619c389 NE OO PK
+W compstate%s		compstate.adb		compstate.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D adaasn1rtl.ads	20180428010705 157756a2 adaasn1rtl%s
+D compstate.ads		20180428010645 dcdfba05 compstate%s
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180428010705 193bb09e taste_basictypes%s
+D taste_dataview.ads	20180428010705 b0f47e2c taste_dataview%s
+D tasteada.ads		20180428010705 eac6798c tasteada%s
+X 5 compstate.ads
+16K9*compstate 77e14 11|1w6
+21U14*switch_on 22i<c,compstate_PI_switch_on>21
+27U14*switch_off 28i<c,compstate_PI_switch_off>21
+33U14*restart 34i<c,compstate_PI_restart>21
+39U14*start_recording 40i<c,compstate_PI_start_recording>21
+45U14*pause 46i<c,compstate_PI_pause>21
+51U14*resume 52i<c,compstate_PI_resume>21
+57U14*stop_recording 58i<c,compstate_PI_stop_recording>21
+63U14*fail 64i<c,compstate_PI_fail>21
+X 11 tasteada.ads
+2K9*TasteAda 3l5 3e13
+

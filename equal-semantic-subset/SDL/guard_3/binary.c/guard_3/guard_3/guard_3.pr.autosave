@@ -1,0 +1,39 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process guard_3;
+    /* CIF TEXT (517, 121), (120, 40) */
+    dcl x MyReal;
+    dcl star MyReal;
+    /* CIF ENDTEXT */
+    /* CIF START (385, 24), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (385, 74), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (517, 78), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (519, 22), (70, 35) */
+    state S1;
+    endstate;
+    /* CIF state (385, 74), (70, 35) */
+    state S1;
+        /* CIF input (385, 129), (70, 35) */
+        input e(x);
+            /* CIF decision (385, 184), (70, 50) */
+            decision x>5.0;
+                /* CIF ANSWER (317, 262), (70, 23) */
+                (true):
+                    /* CIF task (317, 305), (70, 35) */
+                    task star:=x;
+                    /* CIF output (298, 355), (107, 35) */
+                    output out_msg('S2');
+                    /* CIF NEXTSTATE (317, 405), (70, 35) */
+                    NEXTSTATE S2;
+                /* CIF ANSWER (430, 254), (70, 23) */
+                ELSE:
+                    /* CIF output (413, 303), (103, 35) */
+                    output out_msg('S1');
+                    /* CIF NEXTSTATE (430, 353), (70, 35) */
+                    NEXTSTATE S1;
+            enddecision;
+    endstate;
+endprocess guard_3;

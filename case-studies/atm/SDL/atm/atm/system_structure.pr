@@ -1,0 +1,61 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM atm;
+
+	/* CIF Keep Specific Geode PARAMNAMES account */
+	SIGNAL accept_card (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL reject_transaction (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL out_of_service (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL abort_out (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES amount */
+	SIGNAL amount (Amount);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL other_amount (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES num */
+	SIGNAL digit (Num);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL ok (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL transaction_succeseeded (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES amount */
+	SIGNAL transaction (Amount);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL display (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL eject_card (MyString);
+
+	CHANNEL c
+		FROM ENV TO atm WITH accept_card,reject_transaction,out_of_service,abort_out,amount,other_amount,digit,ok,transaction_succeseeded;
+		FROM atm TO ENV WITH out_msg,transaction,display,eject_card;
+	ENDCHANNEL;
+
+	BLOCK atm;
+
+		SIGNALROUTE r
+			FROM ENV TO atm WITH accept_card,reject_transaction,out_of_service,abort_out,amount,other_amount,digit,ok,transaction_succeseeded;
+			FROM atm TO ENV WITH out_msg,transaction,display,eject_card;
+
+		CONNECT c and r;
+
+		PROCESS atm REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

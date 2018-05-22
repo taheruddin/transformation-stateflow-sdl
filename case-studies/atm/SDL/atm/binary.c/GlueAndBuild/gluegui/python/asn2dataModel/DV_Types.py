@@ -1,0 +1,1 @@
+funcTypeLookup = {'T_Int8__Get': 'asn1SccSint', 'MyReal__Get': 'double', 'T_UInt8__Get': 'asn1SccSint', 'Num__Get': 'asn1SccSint', 'MyString__iDx_Get': 'byte', 'MyString__GetLength': 'long', 'T_Int32__Get': 'asn1SccSint', 'T_Boolean__Get': 'flag', 'T_UInt32__Get': 'asn1SccSint', 'Amount__Get': 'asn1SccSint'}

@@ -1,0 +1,23 @@
+--  This file was generated automatically: DO NOT MODIFY IT !
+
+--  This file contains the description of the system distribution.
+--  It is an input file for the TASTE ORCHESTRATOR
+
+* chip PLATFORM_NATIVE
+gui
+atm
+chip_taste_api
+vt_gui_transaction
+vt_gui_display
+vt_gui_eject_card
+vt_gui_out_msg
+vt_gui_gui_polling_gui
+vt_atm_accept_card
+vt_atm_reject_transaction
+vt_atm_out_of_service
+vt_atm_abort_out
+vt_atm_amount
+vt_atm_other_amount
+vt_atm_digit
+vt_atm_ok
+vt_atm_transaction_succeseeded

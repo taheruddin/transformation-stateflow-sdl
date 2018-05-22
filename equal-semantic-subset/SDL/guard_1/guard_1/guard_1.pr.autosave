@@ -1,0 +1,44 @@
+/* CIF PROCESS (250, 151), (150, 75) */
+process guard_1;
+    /* CIF TEXT (634, 63), (163, 39) */
+    dcl x MyReal;
+    dcl whatever MyString;
+    /* CIF ENDTEXT */
+    /* CIF START (347, 72), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (347, 127), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (703, 117), (70, 35) */
+    state S1;
+    endstate;
+    /* CIF state (702, 168), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (539, 65), (70, 35) */
+    state S1;
+        /* CIF input (511, 120), (126, 35) */
+        input check(whatever);
+            /* CIF decision (539, 170), (70, 50) */
+            decision x>5.0;
+                /* CIF ANSWER (464, 240), (70, 23) */
+                (true):
+                    /* CIF output (447, 278), (103, 35) */
+                    output out_msg('S2');
+                    /* CIF NEXTSTATE (464, 328), (70, 35) */
+                    NEXTSTATE S2;
+                /* CIF ANSWER (577, 240), (70, 23) */
+                ELSE:
+                    /* CIF output (560, 278), (103, 35) */
+                    output out_msg('S1');
+                    /* CIF NEXTSTATE (577, 328), (70, 35) */
+                    NEXTSTATE S1;
+            enddecision;
+    endstate;
+    /* CIF state (347, 127), (70, 35) */
+    state S1;
+        /* CIF input (319, 182), (126, 35) */
+        input get_data(x);
+            /* CIF NEXTSTATE (347, 237), (70, 35) */
+            NEXTSTATE S1;
+    endstate;
+endprocess guard_1;

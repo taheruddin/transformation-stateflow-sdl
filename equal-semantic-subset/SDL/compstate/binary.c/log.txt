@@ -1,0 +1,298 @@
+From: /home/taste/compstate/binary.c
+mono "$DMT/asn1scc/taste-extract-asn-from-design.exe" -i "/home/taste/compstate/__iv_1_3.aadl" -k "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" -c "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.acn"
+From: /home/taste/compstate/binary.c
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.acn" . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.acn" . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c
+mono "$DMT/asn1scc/taste-extract-asn-from-design.exe" -i "/home/taste/compstate/__iv_1_3.aadl" -j "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn"
+From: /home/taste/compstate/binary.c
+asn2aadlPlus -acn "/home/taste/compstate/binary.c/dataview-uniq.acn" "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" D_view.aadl
+From: /home/taste/compstate/binary.c
+asn2aadlPlus -aadlv2  -acn "/home/taste/compstate/binary.c/dataview-uniq.acn" "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" D_view_aadlv2.aadl
+From: /home/taste/compstate/binary.c
+mono "$DMT/asn1scc/taste-extract-asn-from-design.exe" -i "/home/taste/compstate/__iv_1_3.aadl" -k "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn"
+From: /home/taste/compstate/binary.c/auto-src
+cp "$DMT"/AutoGUI/debug_messages.? .
+From: /home/taste/compstate/binary.c/auto-src
+cp "$DMT"/AutoGUI/timeInMS.? .
+From: /home/taste/compstate/binary.c/auto-src
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" .
+From: /home/taste/compstate/binary.c/auto-src
+cp "/home/taste/compstate/binary.c/dataview-uniq.acn" .
+From: /home/taste/compstate/binary.c/auto-src
+mono "$DMT"/asn1scc/asn1.exe -c -uPER -typePrefix asn1Scc -wordSize 8 -ACN "dataview-uniq.acn" "dataview-uniq.asn"
+From: /home/taste/compstate/binary.c/auto-src
+msgPrinter "dataview-uniq.asn"
+From: /home/taste/compstate/binary.c/auto-src
+msgPrinterASN1 "dataview-uniq.asn"
+From: /home/taste/compstate/binary.c/compstate
+unzip -o "/home/taste/compstate/compstate.zip"
+From: /home/taste/compstate/binary.c/compstate
+find "compstate"/ ! -type d -exec chmod -x '{}' ';'
+From: /home/taste/compstate/binary.c/compstate
+find "compstate"/ -exec touch '{}' ';'
+From: /home/taste/compstate/binary.c/compstate
+find "compstate"/ -type f -iname '*.o' -exec rm -f '{}' ';'
+From: /home/taste/compstate/binary.c
+cp $(ocarina-config --resources)/AADLv2/ocarina_components.aadl .
+From: /home/taste/compstate/binary.c
+cleanupDV.pl "__dv_1_3.aadl" > a_temp_name && mv a_temp_name "__dv_1_3.aadl"
+From: /home/taste/compstate/binary.c
+"buildsupport"  -x 100  -g  --keep-case  --gw --glue -i "/home/taste/compstate/__iv_1_3.aadl"  -c "__dv_1_3.aadl" ocarina_components.aadl  -d D_view_aadlv2.aadl --polyorb-hi-c --smp2 /home/taste/tool-inst/share/config_ellidiss/TASTE_IV_Properties.aadl /home/taste/tool-inst/share/config_ellidiss/TASTE_DV_Properties.aadl
+From: /home/taste/compstate/binary.c
+TASTE --load-concurrency-view ConcurrencyView/process.aadl  --update-properties "/home/taste/compstate/ConcurrencyView_Properties.aadl" --show false
+From: /home/taste/compstate/binary.c/GlueAndBuild
+mv main.aadl.new main.aadl
+From: /home/taste/compstate/binary.c/GlueAndBuild
+cp $(ocarina-config --resources)/AADLv2/ocarina_components.aadl .
+From: /home/taste/compstate/binary.c/GlueAndBuild
+cleanupDV.pl "__dv_1_3.aadl" > a_temp_name && mv a_temp_name "__dv_1_3.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+find . -type d \( -iname 'glue*' -prune -o -exec rm -rf '{}' ';' \) 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/GlueAndBuild
+ocarina -x main.aadl
+From: /home/taste/compstate/binary.c/compstate
+rm -f "compstate.adb"
+From: /home/taste/compstate/binary.c/compstate
+mv "compstate.ads" "compstate"
+for chip, identified CC:
+gcc
+for chip, identified CFLAGS:
+-DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT
+for chip, identified LDFLAGS:
+-lpthread -lrt -lm
+From: /home/taste/compstate/binary.c/GlueAndBuild
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" .
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluecompstate" ../D_view.aadl "../compstate/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluegui" ../D_view.aadl "../gui/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluecompstate
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluechip_taste_api" ../D_view.aadl "../chip_taste_api/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_fail" ../D_view.aadl "../vt_compstate_fail/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluechip_taste_api
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_fail
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_pause" ../D_view.aadl "../vt_compstate_pause/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_restart" ../D_view.aadl "../vt_compstate_restart/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_pause
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_restart
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_resume" ../D_view.aadl "../vt_compstate_resume/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_start_recording" ../D_view.aadl "../vt_compstate_start_recording/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_resume
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_start_recording
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_stop_recording" ../D_view.aadl "../vt_compstate_stop_recording/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_switch_off" ../D_view.aadl "../vt_compstate_switch_off/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_switch_off
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_stop_recording
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_gui_gui_polling_gui" ../D_view.aadl "../vt_gui_gui_polling_gui/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_compstate_switch_on" ../D_view.aadl "../vt_compstate_switch_on/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_compstate_switch_on
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_gui_gui_polling_gui
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/GlueAndBuild
+aadl2glueC -o "gluevt_gui_out_msg" ../D_view.aadl "../vt_gui_out_msg/mini_cv.aadl"
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluevt_gui_out_msg
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99    -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../auto-src       -I "../../compstate/compstate/"   -I ~/tool-src/misc/ZestSC1/Inc/  *.c
+From: /home/taste/compstate/binary.c/compstate/compstate
+for i in `/bin/ls ../../GlueAndBuild/gluecompstate/*.ad? 2>/dev/null | grep -v '/asn1_'` ; do cp "$i"  . ; done
+From: /home/taste/compstate/binary.c/compstate/compstate
+cp ../../GlueAndBuild/gluecompstate/adaasn1rtl.ad? . 2>/dev/null ; exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+cp ../../GlueAndBuild/gluecompstate/adaasn1rtl.ad? . 2>/dev/null ; exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+cp ../../GlueAndBuild/gluecompstate/taste_basictypes.ad? . 2>/dev/null ; exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+cp ../../GlueAndBuild/gluecompstate/taste_dataview.ad? . 2>/dev/null ; exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+for i in compstate_vm_if.c compstate_vm_if.h vm_callback.c ; do if [ -f ../$i ] ; then cp ../$i . ; fi ; done
+From: /home/taste/compstate/binary.c/compstate/compstate
+for i in hpredef.h invoke_ri.c vm_callback.h ; do if [ -f ../$i ] ; then cp ../$i . ; fi ; done
+From: /home/taste/compstate/binary.c/compstate/compstate
+cp ../*polyorb_interface.h . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+rm -f ../dataview.ad[sb] 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/compstate/compstate
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../GlueAndBuild/gluecompstate/ -I ../../auto-src/ *.c
+From: /home/taste/compstate/binary.c/compstate
+"$GNATGCC" -c -I ../GlueAndBuild/gluecompstate/ -I ../auto-src/ -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  *.c
+From: /home/taste/compstate/binary.c/gui
+for i in * ; do if [ -f "$i" -a ! -e ext/"$i" ] ; then ln -s ../"$i" ext/ ; fi ; done
+From: /home/taste/compstate/binary.c/gui/ext
+cp "$DMT"/AutoGUI/queue_manager.? .
+From: /home/taste/compstate/binary.c/gui/ext
+cp ../*polyorb_interface.? . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/gui/ext
+cp ../Context-*.? . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/gui/ext
+rm -f ../*-uniq.? *-uniq.? 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/gui/ext
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../../GlueAndBuild/gluegui/ -I ../../auto-src/ *.c
+From: /home/taste/compstate/binary.c/gui
+for i in * ; do if [ -f "$i" -a ! -e GUI/"$i" ] ; then ln -s ../"$i" GUI/ ; fi ; done
+From: /home/taste/compstate/binary.c/gui/GUI
+cp "$DMT"/AutoGUI/* .
+From: /home/taste/compstate/binary.c/gui/GUI
+cat Makefile | sed 's,DataView,dataview-uniq,g' > a_temp_name && mv a_temp_name Makefile
+From: /home/taste/compstate/binary.c/gui/GUI
+cat Makefile | sed 's,applicationName,gui_GUI,g' > a_temp_name && mv a_temp_name Makefile
+From: /home/taste/compstate/binary.c/gui/GUI
+cp -u ../../GlueAndBuild/gluegui/C_*.[ch] .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "$DMT"/AutoGUI/queue_manager.? .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "$DMT"/AutoGUI/timeInMS.? .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "$DMT"/AutoGUI/debug_messages.? .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "/home/taste/compstate/binary.c"/gui/gui_enums_def.h .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "/tmp/uniqhometastecompstate__iv_1_3.aadl/dataview-uniq.asn" .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp "/home/taste/compstate/binary.c/dataview-uniq.acn" .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+asn2dataModel -o asn2dataModel -toPython dataview-uniq.asn
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python/asn2dataModel
+cp "/home/taste/compstate/binary.c/dataview-uniq.acn" .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python/asn2dataModel
+cp "/home/taste/compstate/binary.c"/gui/interface_enum.h .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python/asn2dataModel
+make -f Makefile.python
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp asn2dataModel/asn1crt.h asn2dataModel/Stubs.py asn2dataModel/DV* asn2dataModel/*.so .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp asn2dataModel/dataview-uniq.h .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+cp asn2dataModel/dataview_uniq_asn.py .
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+gcc -g -fPIC -c `python-config --cflags` gui_api.c queue_manager.c timeInMS.c debug_messages.c
+From: /home/taste/compstate/binary.c/GlueAndBuild/gluegui/python
+gcc -g -shared -o PythonAccess.so gui_api.o queue_manager.o timeInMS.o debug_messages.o `python-config --ldflags` -lrt
+From: /home/taste/compstate/binary.c/chip_taste_api
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluechip_taste_api/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_fail
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_fail/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_pause
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_pause/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_restart
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_restart/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_resume
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_resume/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_start_recording
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_start_recording/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_stop_recording
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_stop_recording/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_switch_off
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_switch_off/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_compstate_switch_on
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_compstate_switch_on/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_gui_gui_polling_gui
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_gui_gui_polling_gui/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c/vt_gui_out_msg
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/compstate/binary.c/GlueAndBuild/deploymentview_final/chip -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  -I ../GlueAndBuild/gluevt_gui_out_msg/ -I ../auto-src/ *.c
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluecompstate/*.o compstate/compstate/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluegui/*.o gui/ext/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluechip_taste_api/*.o chip_taste_api/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_fail/*.o vt_compstate_fail/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_pause/*.o vt_compstate_pause/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_restart/*.o vt_compstate_restart/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_resume/*.o vt_compstate_resume/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_start_recording/*.o vt_compstate_start_recording/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_stop_recording/*.o vt_compstate_stop_recording/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_switch_off/*.o vt_compstate_switch_off/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_compstate_switch_on/*.o vt_compstate_switch_on/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_gui_gui_polling_gui/*.o vt_gui_gui_polling_gui/
+From: /home/taste/compstate/binary.c
+mv GlueAndBuild/gluevt_gui_out_msg/*.o vt_gui_out_msg/
+From: /home/taste/compstate/binary.c
+patchAPLCs.py  "compstate/compstate/" "compstate_renamed" "gui/ext/" "gui_renamed" "gui/ext/" "gui" "chip_taste_api/" "chip_taste_api_renamed" "chip_taste_api/" "chip_taste_api" "vt_compstate_fail/" "vt_compstate_fail_renamed" "vt_compstate_fail/" "vt_compstate_fail" "vt_compstate_pause/" "vt_compstate_pause_renamed" "vt_compstate_pause/" "vt_compstate_pause" "vt_compstate_restart/" "vt_compstate_restart_renamed" "vt_compstate_restart/" "vt_compstate_restart" "vt_compstate_resume/" "vt_compstate_resume_renamed" "vt_compstate_resume/" "vt_compstate_resume" "vt_compstate_start_recording/" "vt_compstate_start_recording_renamed" "vt_compstate_start_recording/" "vt_compstate_start_recording" "vt_compstate_stop_recording/" "vt_compstate_stop_recording_renamed" "vt_compstate_stop_recording/" "vt_compstate_stop_recording" "vt_compstate_switch_off/" "vt_compstate_switch_off_renamed" "vt_compstate_switch_off/" "vt_compstate_switch_off" "vt_compstate_switch_on/" "vt_compstate_switch_on_renamed" "vt_compstate_switch_on/" "vt_compstate_switch_on" "vt_gui_gui_polling_gui/" "vt_gui_gui_polling_gui_renamed" "vt_gui_gui_polling_gui/" "vt_gui_gui_polling_gui" "vt_gui_out_msg/" "vt_gui_out_msg_renamed" "vt_gui_out_msg/" "vt_gui_out_msg"
+From: /home/taste/compstate/binary.c
+rm -rf "/home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE" 2>/dev/null ; exit 0
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+cp ../auto-src/*.[ch] .
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+"$GNATGCC" -c -I . -DSTATIC="" -g   -std=c99   -I /home/taste/tool-inst/include/ocarina/runtime/polyorb-hi-c/include/   -DPOSIX -D_POSIX_SOURCE -D_GNU_SOURCE  -g -Wall -Wextra -fdiagnostics-show-option -Wcast-align -Wswitch-enum -D__PO_HI_USE_TRANSPORT  *.c
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+cp ../GlueAndBuild/gluecompstate/*.adb . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+cp ../GlueAndBuild/gluecompstate/*.ads . 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+"$GNATMAKE" -c  -I.  -gnat2012 tasteada.ads
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+"$GNATBIND" -t -n tasteada.ali -o ada-start.adb
+From: /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE
+"$GNATMAKE" -c -g  -gnat2012 ada-start.adb
+From: /home/taste/compstate/binary.c/GlueAndBuild
+rm -f /home/taste/compstate/binary.c/compstate//compstate_vm_if.o
+From: /home/taste/compstate/binary.c/GlueAndBuild
+rm -f /home/taste/compstate/binary.c/compstate//invoke_ri.o
+From: /home/taste/compstate/binary.c/GlueAndBuild
+cd './deploymentview_final/chip' && ADA_INCLUDE_PATH="/home/taste/compstate/binary.c/compstate/compstate:/home/taste/compstate/binary.c/vt_compstate_restart:/home/taste/compstate/binary.c/vt_compstate_fail:/home/taste/compstate/binary.c/vt_compstate_switch_on:/home/taste/compstate/binary.c/vt_compstate_switch_off:/home/taste/compstate/binary.c/vt_compstate_start_recording:/home/taste/compstate/binary.c/vt_compstate_pause:/home/taste/compstate/binary.c/vt_compstate_stop_recording:/home/taste/compstate/binary.c/vt_gui_out_msg:/home/taste/compstate/binary.c/vt_gui_gui_polling_gui:/home/taste/compstate/binary.c/vt_compstate_resume:/home/taste/compstate/binary.c/gui"  USER_CFLAGS="${USER_CFLAGS} -g -D__PO_HI_USE_VCD=1 -I . -DSTATIC=\"\" " USER_LDFLAGS="${USER_LDFLAGS} -g -L/usr/lib/gcc/i686-linux-gnu/6/adalib/ -Wl,-R/usr/lib/gcc/i686-linux-gnu/6/adalib/ -lgnat -lgnarl -lm -lpthread -lrt " EXTERNAL_OBJECTS="-lrt /home/taste/compstate/binary.c/auto-src_PLATFORM_NATIVE/*.o /home/taste/compstate/binary.c/gui/ext/*.o /home/taste/compstate/binary.c/compstate/compstate/*.o /home/taste/compstate/binary.c/compstate/*.o /home/taste/compstate/binary.c/chip_taste_api/*.o /home/taste/compstate/binary.c/vt_gui_out_msg/*.o /home/taste/compstate/binary.c/vt_gui_gui_polling_gui/*.o /home/taste/compstate/binary.c/vt_compstate_switch_on/*.o /home/taste/compstate/binary.c/vt_compstate_switch_off/*.o /home/taste/compstate/binary.c/vt_compstate_restart/*.o /home/taste/compstate/binary.c/vt_compstate_start_recording/*.o /home/taste/compstate/binary.c/vt_compstate_pause/*.o /home/taste/compstate/binary.c/vt_compstate_resume/*.o /home/taste/compstate/binary.c/vt_compstate_stop_recording/*.o /home/taste/compstate/binary.c/vt_compstate_fail/*.o " make
+From: /home/taste/compstate/binary.c
+find '/home/taste/compstate/binary.c'/GlueAndBuild -type f -perm /111 ! -iname '*.so' -a ! -iname '*.pyd' | while read ANS ; do file "$ANS" | egrep 'ELF|PE32' >/dev/null 2>/dev/null && mv "$ANS" "/home/taste/compstate/binary.c/binaries/" ; done ; exit 0
+From: /home/taste/compstate/binary.c
+find '/home/taste/compstate/binary.c'/ -name binaries -prune -o -type f -perm /111 -iname '*_GUI' -exec bash -c 'F="{}"; D=$(dirname "$F"); B=$(basename "$F") ; B="${B/_GUI/}"; mv "$F" "/home/taste/compstate/binary.c/binaries/" ; mv "$D"/../../../${B}.pl "/home/taste/compstate/binary.c/binaries/" ; mv "$D"/../../../${B}_RunAndPlot.sh "/home/taste/compstate/binary.c/binaries/" ; ' ';' 2>/dev/null
+From: /home/taste/compstate/binary.c/binaries
+rm -rf "/tmp/uniqhometastecompstate__iv_1_3.aadl"
+From: /home/taste/compstate/binary.c/binaries
+mkdir -p "/home/taste/compstate/binary.c/binaries/gui-GUI"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//"*.py "/home/taste/compstate/binary.c/binaries/gui-GUI"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//guilayout.ui" "/home/taste/compstate/binary.c/binaries/gui-GUI"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/"*.py "/home/taste/compstate/binary.c/binaries/gui-GUI"
+From: /home/taste/compstate/binary.c/binaries
+echo "errCodes = $(taste-asn1-errCodes /home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/dataview-uniq.h)" >> "/home/taste/compstate/binary.c/binaries/gui-GUI/datamodel.py"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/"*.so "/home/taste/compstate/binary.c/binaries/gui-GUI"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/asn2dataModel/"*.pyd "/home/taste/compstate/binary.c/binaries/gui-GUI" 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/asn2dataModel/"*.so "/home/taste/compstate/binary.c/binaries/gui-GUI" 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/GlueAndBuild/gluegui//python/asn2dataModel/"DV_Types.py "/home/taste/compstate/binary.c/binaries/gui-GUI" 2>/dev/null || exit 0
+From: /home/taste/compstate/binary.c/binaries
+echo 'A=$(dirname "$0") ; cd "$A/gui-GUI" && PYTHONPATH=$(taste-config --prefix)/share:$PYTHONPATH taste-gui "$@"' > "/home/taste/compstate/binary.c/binaries/GUI-gui" && chmod +x "/home/taste/compstate/binary.c/binaries/GUI-gui"
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/__iv_1_3.aadl" "/home/taste/compstate/binary.c/binaries/gui-GUI"/InterfaceView.aadl
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/__iv_1_3.aadl" "/home/taste/compstate/binary.c/binaries/gui-GUI"/InterfaceView.aadl
+From: /home/taste/compstate/binary.c/binaries
+cp "/home/taste/compstate/binary.c/dataview-uniq.asn" "/home/taste/compstate/binary.c/binaries/gui-GUI"/

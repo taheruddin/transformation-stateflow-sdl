@@ -1,0 +1,25 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process guard_2;
+    /* CIF TEXT (517, 142), (163, 48) */
+    dcl whatever MyString;
+    /* CIF ENDTEXT */
+    /* CIF START (406, 24), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (406, 93), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (406, 93), (70, 35) */
+    state S1;
+        /* CIF input (392, 148), (97, 35) */
+        input e(whatever);
+            /* CIF output (389, 203), (103, 35) */
+            output out_msg('S2');
+            /* CIF NEXTSTATE (406, 258), (70, 35) */
+            NEXTSTATE S2;
+    endstate;
+    /* CIF state (518, 91), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (528, 24), (70, 35) */
+    state S1;
+    endstate;
+endprocess guard_2;

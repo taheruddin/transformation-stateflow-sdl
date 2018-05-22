@@ -1,0 +1,35 @@
+-- Automatically Generated - For use with AADL2GlueC only - Do NOT modify! --
+
+SUBPROGRAM artificial_outputmsg
+FEATURES
+	outmsg:IN PARAMETER DataView::MyString {encoding=>NATIVE;};
+END artificial_outputmsg;
+
+SUBPROGRAM IMPLEMENTATION artificial_outputmsg.C
+PROPERTIES
+	FV_Name => "vt_gui_outputmsg";
+	Source_Language => C;
+END artificial_outputmsg.C;
+
+SUBPROGRAM outputmsg
+FEATURES
+	outmsg:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END outputmsg;
+
+SUBPROGRAM IMPLEMENTATION outputmsg.C
+PROPERTIES
+	FV_Name => "vt_gui_outputmsg";
+	Source_Language => C;
+END outputmsg.C;
+
+SUBPROGRAM inputmsg_vt
+FEATURES
+	inmsg:OUT PARAMETER DataView::T_Int32 {encoding=>NATIVE;};
+END inputmsg_vt;
+
+SUBPROGRAM IMPLEMENTATION inputmsg_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_outputmsg";
+	Source_Language => C;
+END inputmsg_vt.C;
+

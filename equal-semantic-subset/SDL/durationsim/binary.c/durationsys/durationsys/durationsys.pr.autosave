@@ -1,0 +1,69 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process durationsys;
+    /* CIF TEXT (1103, 221), (145, 79) */
+    timer sdltmr;
+    
+    dcl someval T_Int32;
+    /* CIF ENDTEXT */
+    /* CIF START (604, 211), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (604, 261), (70, 35) */
+        NEXTSTATE WAIT;
+    /* CIF state (871, 232), (71, 35) */
+    state TICKING;
+    endstate;
+    /* CIF state (782, 231), (70, 35) */
+    state WAIT;
+    endstate;
+    /* CIF state (963, 232), (70, 35) */
+    state READY;
+    endstate;
+    /* CIF state (999, 332), (71, 35) */
+    state TICKING;
+        /* CIF input (844, 387), (138, 35) */
+        input inputmsg(someval);
+            /* CIF decision (875, 442), (75, 50) */
+            decision someval;
+                /* CIF ANSWER (803, 512), (70, 23) */
+                (5):
+                    /* CIF NEXTSTATE (802, 555), (71, 35) */
+                    NEXTSTATE TICKING;
+                /* CIF ANSWER (923, 512), (70, 23) */
+                ELSE:
+                    /* CIF PROCEDURECALL (883, 555), (149, 35) */
+                    call reset_timer(sdltmr);
+                    /* CIF output (891, 610), (134, 35) */
+                    output outputmsg('WAIT');
+                    /* CIF NEXTSTATE (923, 665), (70, 35) */
+                    NEXTSTATE WAIT;
+            enddecision;
+        /* CIF input (1079, 387), (70, 35) */
+        input sdltmr;
+            /* CIF output (1042, 442), (143, 35) */
+            output outputmsg('READY');
+            /* CIF NEXTSTATE (1079, 497), (70, 35) */
+            NEXTSTATE READY;
+    endstate;
+    /* CIF state (604, 261), (70, 35) */
+    state WAIT;
+        /* CIF input (570, 316), (138, 35) */
+        input inputmsg(someval);
+            /* CIF decision (601, 371), (75, 50) */
+            decision someval;
+                /* CIF ANSWER (537, 441), (70, 23) */
+                (3):
+                    /* CIF PROCEDURECALL (487, 484), (169, 35) */
+                    call set_timer(5000, sdltmr);
+                    /* CIF output (494, 534), (155, 35) */
+                    output outputmsg('TICKING');
+                    /* CIF NEXTSTATE (536, 589), (71, 35) */
+                    NEXTSTATE TICKING;
+                /* CIF ANSWER (691, 441), (70, 23) */
+                ELSE:
+                    /* CIF output (659, 484), (134, 35) */
+                    output outputmsg('WAIT');
+                    /* CIF NEXTSTATE (691, 539), (70, 35) */
+                    NEXTSTATE WAIT;
+            enddecision;
+    endstate;
+endprocess durationsys;

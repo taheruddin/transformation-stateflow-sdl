@@ -1,0 +1,10 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process initsys;
+    /* CIF START (353, 72), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (353, 127), (70, 35) */
+        NEXTSTATE OFF;
+    /* CIF state (541, 74), (70, 35) */
+    state OFF;
+    endstate;
+endprocess initsys;

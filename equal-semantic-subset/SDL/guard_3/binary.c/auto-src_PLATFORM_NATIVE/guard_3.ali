@@ -1,0 +1,111 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U guard_3%b		guard_3.adb		0c3b5116 OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.unchecked_conversion%s
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.io%s		s-io.adb		s-io.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+W taste_dataview%s	taste_dataview.adb	taste_dataview.ali
+
+U guard_3%s		guard_3.ads		74e0c1f0 EE NE OO PK IL
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+W taste_dataview%s	taste_dataview.adb	taste_dataview.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-numaux.ads		20140801094828 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20151016131424 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20151020124036 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D adaasn1rtl.ads	20180515155733 157756a2 adaasn1rtl%s
+D guard_3.ads		20180515155720 7c4c3673 guard_3%s
+D guard_3.adb		20180515155720 ec67edf2 guard_3%b
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-io.ads		20090409150019 9e42f74f system.io%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180515155733 193bb09e taste_basictypes%s
+D taste_dataview.ads	20180515155733 04e011bf taste_dataview%s
+X 1 ada.ads
+16K9*Ada 19e8 11|6r6 7r6
+X 4 a-numeri.ads
+16K13*Numerics 32e17 11|7r10
+X 6 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 11|7w19
+X 8 a-unccon.ads
+20v14*Unchecked_Conversion 11|6w10
+X 9 adaasn1rtl.ads
+9K9*adaasn1rtl 898e15 10|10w6 11r5 11|13w6 14r5
+21M12*Asn1Byte{12|62M9}
+22A9*OctetBuffer(21M12)<integer>
+26F12*Asn1Real{long_float}
+28B12*Asn1Boolean{boolean}
+X 10 guard_3.ads
+16K9*guard_3 35l5 35e12 11|19b14 95l5 95t12
+21U14*e 21^16 22i<c,guard_3_PI_e>21 11|31b15 42l13 42t14
+21p16 x(19|44F9) 11|31b17 37r31
+27U14*out_msg 27^22 28b<c,guard_3_RI_out_msg>21 29r62
+27p22 msg(19|22R6)
+29U14*RIÜout_msg=29:62 11|65s29 74s29
+29p25 msg(19|22R6)
+32U14*Check_Queue 32^26 33b<c,guard_3_RI_check_queue>21
+32p26 res(18|94E9)
+X 11 guard_3.adb
+20E10 States 20e28 23r17
+20n21 s2{20E10} 34r22 68r43
+20n25 s1{20E10} 36r22 55r39 77r43
+21R10 ctxt_Ty 27e15 28r19
+23e9*state{20E10} 33r23 55m30 68m34 77m34
+24b9*initDone{boolean} 94m14
+25f9*x{19|44F9} 37m26 60r35 62r47
+26f9*star{19|44F9} 62m34
+28r5 ctxt{21R10} 33r18 37m21 55m25 60r30 62m29 62r42 68m29 77m29 94m9
+29i5 CS_Only{integer} 35r35 40r35 80r26
+30U15 runTransition 30>29 35s21 38s21 40s21 45b15 89l13 89t26 93s9
+30i29 Id{integer} 45b29 46r27
+46i9 trId{integer} 50r20 51r22 54m25 67m29 76m29 81m25
+47r9 tmp10{19|22R6} 73m29 74m40 74r40
+48r9 tmp8{19|22R6} 64m29 65m40 65r40
+86L19 next_transition 56r30 69r34 78r34 82r30
+X 12 interfac.ads
+38K9*Interfaces 11|16w6 17r5 12|183e15
+62M9*Unsigned_8
+X 13 system.ads
+37K9*System 11|3r6 4r5 13|156e11
+X 15 s-io.ads
+37K16*IO 11|3w13 4r12 15|64e14
+X 18 taste_basictypes.ads
+13K9*TASTE_BasicTypes 10|7w6 8r5 11|11w6 12r5 18|116e21
+94B9*asn1SccT_Boolean{9|28E12} 10|32r38
+X 19 taste_dataview.ads
+14K9*TASTE_Dataview 10|13w6 14r5 11|9w6 10r5 19|69e19
+20A9*asn1SccMyString_array{9|22A9}<integer>
+21I9*asn1SccMyString_length_index{integer}
+22R6*asn1SccMyString 10|27r34 29r37 11|47r25 48r24 19|25e11
+23i5*Length{21I9} 11|64m69 73m70
+24a5*Data{20A9} 11|64m38 73m39
+44F9*asn1SccMyReal{9|26F12} 10|21r26 11|25r21 26r24 31r27
+

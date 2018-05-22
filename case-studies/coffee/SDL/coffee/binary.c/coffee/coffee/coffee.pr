@@ -1,0 +1,223 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process coffee;
+    state ON;
+    substructure
+        out (to_standby);
+            /* CIF START (471, 39), (75, 35) */
+            START;
+                /* CIF NEXTSTATE (471, 94), (75, 35) */
+                NEXTSTATE HEATING;
+            /* CIF state (768, 503), (71, 35) */
+            state TICKING;
+                /* CIF input (768, 558), (70, 35) */
+                input tmr2;
+                    /* CIF output (706, 613), (193, 35) */
+                    output out_msg('FEELING_CARAFE');
+                    /* CIF NEXTSTATE (739, 668), (127, 35) */
+                    NEXTSTATE FEELING_CARAFE;
+            endstate;
+            /* CIF state (737, 140), (71, 35) */
+            state TICKING;
+                /* CIF input (737, 195), (70, 35) */
+                input tmr1;
+                    /* CIF task (674, 250), (196, 35) */
+                    task water_tmpr:=water_tmpr+10;
+                    /* CIF output (701, 300), (141, 35) */
+                    output out_msg('HEATING');
+                    /* CIF NEXTSTATE (734, 355), (75, 35) */
+                    NEXTSTATE HEATING;
+            endstate;
+            /* CIF state (605, 32), (71, 35) */
+            state TICKING;
+            endstate;
+            /* CIF state (268, 33), (127, 35) */
+            state FEELING_CARAFE;
+            endstate;
+            /* CIF state (169, 32), (75, 35) */
+            state HEATING;
+            endstate;
+            /* CIF state (479, 873), (74, 35) */
+            state BEEPING;
+                /* CIF input (464, 928), (105, 35) */
+                input for_ticking(w);
+                    /* CIF PROCEDURECALL (437, 983), (158, 35) */
+                    call set_timer(3000, tmr3);
+                    /* CIF output (448, 1033), (137, 35) */
+                    output out_msg('TICKING');
+                    /* CIF NEXTSTATE (481, 1088), (71, 35) */
+                    NEXTSTATE TICKING;
+            endstate;
+            /* CIF state (429, 451), (127, 35) */
+            state FEELING_CARAFE;
+                /* CIF input (231, 506), (105, 35) */
+                input for_coffee(w);
+                    /* CIF task (215, 561), (136, 38) */
+                    task water:=water-20,
+coffee:=coffee+20;
+                    /* CIF decision (234, 617), (99, 50) */
+                    decision coffee>=100;
+                        /* CIF ANSWER (142, 687), (70, 23) */
+                        (true):
+                            /* CIF output (107, 730), (140, 35) */
+                            output out_msg('BEEPING');
+                            /* CIF NEXTSTATE (140, 785), (74, 35) */
+                            NEXTSTATE BEEPING;
+                        /* CIF ANSWER (318, 687), (70, 23) */
+                        ELSE:
+                            /* CIF output (256, 730), (193, 35) */
+                            output out_msg('FEELING_CARAFE');
+                            /* CIF NEXTSTATE (289, 785), (127, 35) */
+                            NEXTSTATE FEELING_CARAFE;
+                    enddecision;
+                /* CIF input (504, 506), (150, 35) */
+                input for_ticking(w);
+                    /* CIF task (460, 561), (238, 38) */
+                    task water:=water-20,
+coffee:=coffee+20;
+                    /* CIF PROCEDURECALL (500, 617), (158, 35) */
+                    call set_timer(1000, tmr2);
+                    /* CIF output (510, 672), (137, 35) */
+                    output out_msg('TICKING');
+                    /* CIF NEXTSTATE (543, 727), (71, 35) */
+                    NEXTSTATE TICKING;
+            endstate;
+            /* CIF state (712, 32), (74, 35) */
+            state BEEPING;
+            endstate;
+            /* CIF state (682, 883), (71, 35) */
+            state TICKING;
+                /* CIF input (682, 938), (70, 35) */
+                input tmr3;
+                    /* CIF output (645, 993), (144, 35) */
+                    output out_msg('STANDBY');
+                    /* CIF return (699, 1048), (35, 35) */
+                    return to_standby;
+            endstate;
+            /* CIF state (471, 94), (75, 35) */
+            state HEATING;
+                /* CIF input (263, 149), (135, 35) */
+                input for_water_tmpr(w);
+                    /* CIF decision (263, 204), (135, 50) */
+                    decision water_tmpr >= 100;
+                        /* CIF ANSWER (215, 274), (70, 23) */
+                        (true):
+                            /* CIF output (153, 317), (193, 35) */
+                            output out_msg('FEELING_CARAFE');
+                            /* CIF NEXTSTATE (186, 372), (127, 35) */
+                            NEXTSTATE FEELING_CARAFE;
+                        /* CIF ANSWER (392, 274), (70, 23) */
+                        ELSE:
+                            /* CIF output (356, 317), (141, 35) */
+                            output out_msg('HEATING');
+                            /* CIF NEXTSTATE (389, 372), (75, 35) */
+                            NEXTSTATE HEATING;
+                    enddecision;
+                /* CIF input (534, 149), (105, 35) */
+                input for_ticking(w);
+                    /* CIF PROCEDURECALL (507, 204), (158, 35) */
+                    call set_timer(1000, tmr1);
+                    /* CIF output (518, 254), (137, 35) */
+                    output out_msg('TICKING');
+                    /* CIF NEXTSTATE (551, 304), (71, 35) */
+                    NEXTSTATE TICKING;
+            endstate;
+    endsubstructure;
+    /* CIF TEXT (649, 27), (165, 186) */
+    timer tmr;
+    timer tmr1;
+    timer tmr2;
+    timer tmr3;
+    
+    dcl init_tmpr T_Int32;
+    dcl init_water T_Int32;
+    dcl water T_Int32;
+    dcl water_tmpr T_Int32;
+    dcl coffee T_Int32;
+    dcl w MyString;
+    /* CIF ENDTEXT */
+    /* CIF START (220, 35), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (220, 90), (70, 35) */
+        NEXTSTATE OFF;
+    /* CIF state (220, 90), (70, 35) */
+    state OFF;
+        /* CIF input (165, 145), (179, 35) */
+        input get_init_water(init_water);
+            /* CIF task (191, 200), (128, 38) */
+            task coffee:=0,
+water:=init_water;
+            /* CIF output (198, 258), (113, 35) */
+            output out_msg('OFF');
+            /* CIF NEXTSTATE (220, 313), (70, 35) */
+            NEXTSTATE OFF;
+    endstate;
+    /* CIF state (462, 31), (70, 35) */
+    state OFF;
+        /* CIF input (448, 86), (99, 35) */
+        input for_water(w);
+            /* CIF decision (451, 141), (93, 50) */
+            decision water>=100;
+                /* CIF ANSWER (399, 211), (70, 23) */
+                (true):
+                    /* CIF output (380, 254), (108, 35) */
+                    output out_msg('ON');
+                    /* CIF NEXTSTATE (399, 309), (70, 35) */
+                    NEXTSTATE ON;
+                /* CIF ANSWER (520, 211), (70, 23) */
+                ELSE:
+                    /* CIF output (498, 254), (113, 35) */
+                    output out_msg('OFF');
+                    /* CIF NEXTSTATE (520, 304), (70, 35) */
+                    NEXTSTATE OFF;
+            enddecision;
+    endstate;
+    /* CIF state (219, 418), (70, 35) */
+    state ON;
+        /* CIF input (205, 474), (99, 35) */
+        input for_water(w);
+            /* CIF decision (211, 529), (86, 50) */
+            decision water<100;
+                /* CIF ANSWER (156, 599), (70, 23) */
+                (true):
+                    /* CIF output (134, 642), (113, 35) */
+                    output out_msg('OFF');
+                    /* CIF NEXTSTATE (156, 697), (70, 35) */
+                    NEXTSTATE OFF;
+                /* CIF ANSWER (276, 599), (70, 23) */
+                ELSE:
+                    /* CIF output (257, 642), (108, 35) */
+                    output out_msg('ON');
+                    /* CIF NEXTSTATE (276, 697), (70, 35) */
+                    NEXTSTATE ON;
+            enddecision;
+    endstate;
+    /* CIF state (682, 425), (70, 35) */
+    state ON;
+        /* CIF connect (717, 480), (0, 35) */
+        connect to_standby;
+            /* CIF output (645, 533), (144, 35) */
+            output out_msg('STANDBY');
+            /* CIF NEXTSTATE (678, 583), (78, 35) */
+            NEXTSTATE STANDBY;
+    endstate;
+    /* CIF state (652, 300), (78, 35) */
+    state STANDBY;
+    endstate;
+    /* CIF state (736, 234), (70, 35) */
+    state ON;
+    endstate;
+    /* CIF state (650, 232), (70, 35) */
+    state OFF;
+    endstate;
+    /* CIF state (452, 417), (70, 35) */
+    state ON;
+        /* CIF input (402, 472), (169, 35) */
+        input get_init_tmpr(init_tmpr);
+            /* CIF task (407, 527), (159, 35) */
+            task water_tmpr:=init_tmpr;
+            /* CIF output (433, 582), (108, 35) */
+            output out_msg('ON');
+            /* CIF NEXTSTATE (452, 637), (70, 35) */
+            NEXTSTATE ON;
+    endstate;
+endprocess coffee;

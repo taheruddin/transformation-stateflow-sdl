@@ -1,0 +1,31 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM guard_1;
+
+	/* CIF Keep Specific Geode PARAMNAMES x */
+	SIGNAL get_data (MyReal);
+
+	/* CIF Keep Specific Geode PARAMNAMES whatever */
+	SIGNAL check (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (MyString);
+
+	CHANNEL c
+		FROM ENV TO guard_1 WITH get_data,check;
+		FROM guard_1 TO ENV WITH out_msg;
+	ENDCHANNEL;
+
+	BLOCK guard_1;
+
+		SIGNALROUTE r
+			FROM ENV TO guard_1 WITH get_data,check;
+			FROM guard_1 TO ENV WITH out_msg;
+
+		CONNECT c and r;
+
+		PROCESS guard_1 REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

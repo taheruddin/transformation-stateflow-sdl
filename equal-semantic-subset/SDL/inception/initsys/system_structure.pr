@@ -1,0 +1,28 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM initsys;
+
+	/* CIF Keep Specific Geode PARAMNAMES whatever */
+	SIGNAL inmsg (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL outmsg (MyString);
+
+	CHANNEL c
+		FROM ENV TO initsys WITH inmsg;
+		FROM initsys TO ENV WITH outmsg;
+	ENDCHANNEL;
+
+	BLOCK initsys;
+
+		SIGNALROUTE r
+			FROM ENV TO initsys WITH inmsg;
+			FROM initsys TO ENV WITH outmsg;
+
+		CONNECT c and r;
+
+		PROCESS initsys REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

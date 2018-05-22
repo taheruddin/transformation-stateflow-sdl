@@ -1,0 +1,108 @@
+-- Automatically Generated - For use with AADL2GlueC only - Do NOT modify! --
+
+SUBPROGRAM artificial_gui_polling_gui
+END artificial_gui_polling_gui;
+
+SUBPROGRAM IMPLEMENTATION artificial_gui_polling_gui.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END artificial_gui_polling_gui.C;
+
+SUBPROGRAM gui_polling_gui
+END gui_polling_gui;
+
+SUBPROGRAM IMPLEMENTATION gui_polling_gui.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END gui_polling_gui.C;
+
+SUBPROGRAM switch_on_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END switch_on_vt;
+
+SUBPROGRAM IMPLEMENTATION switch_on_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END switch_on_vt.C;
+
+SUBPROGRAM switch_off_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END switch_off_vt;
+
+SUBPROGRAM IMPLEMENTATION switch_off_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END switch_off_vt.C;
+
+SUBPROGRAM restart_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END restart_vt;
+
+SUBPROGRAM IMPLEMENTATION restart_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END restart_vt.C;
+
+SUBPROGRAM start_recording_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END start_recording_vt;
+
+SUBPROGRAM IMPLEMENTATION start_recording_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END start_recording_vt.C;
+
+SUBPROGRAM pause_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END pause_vt;
+
+SUBPROGRAM IMPLEMENTATION pause_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END pause_vt.C;
+
+SUBPROGRAM resume_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END resume_vt;
+
+SUBPROGRAM IMPLEMENTATION resume_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END resume_vt.C;
+
+SUBPROGRAM fail_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END fail_vt;
+
+SUBPROGRAM IMPLEMENTATION fail_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END fail_vt.C;
+
+SUBPROGRAM stop_recording_vt
+FEATURES
+	w:OUT PARAMETER DataView::MyString {encoding=>NATIVE;};
+END stop_recording_vt;
+
+SUBPROGRAM IMPLEMENTATION stop_recording_vt.C
+PROPERTIES
+	FV_Name => "vt_gui_gui_polling_gui";
+	Source_Language => C;
+END stop_recording_vt.C;
+

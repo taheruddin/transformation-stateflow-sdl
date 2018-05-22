@@ -1,0 +1,192 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U atm%b			atm.adb			f0cc011b OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.unchecked_conversion%s
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.io%s		s-io.adb		s-io.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+W taste_dataview%s	taste_dataview.adb	taste_dataview.ali
+
+U atm%s			atm.ads			fccd44eb EE NE OO PK IL
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+W taste_dataview%s	taste_dataview.adb	taste_dataview.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-numaux.ads		20140801094828 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20151016131424 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20151020124036 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D adaasn1rtl.ads	20180502131054 157756a2 adaasn1rtl%s
+D atm.ads		20180502131029 d65cafab atm%s
+D atm.adb		20180502131029 98bd38e4 atm%b
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-io.ads		20090409150019 9e42f74f system.io%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180502131054 08c4ff04 taste_basictypes%s
+D taste_dataview.ads	20180502131054 372242e6 taste_dataview%s
+X 1 ada.ads
+16K9*Ada 19e8 11|6r6 7r6
+X 4 a-numeri.ads
+16K13*Numerics 32e17 11|7r10
+X 6 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 11|7w19
+X 8 a-unccon.ads
+20v14*Unchecked_Conversion 11|6w10
+X 9 adaasn1rtl.ads
+9K9*adaasn1rtl 898e15 10|10w6 11r5 11|13w6 14r5
+21M12*Asn1Byte{12|62M9}
+22A9*OctetBuffer(21M12)<integer>
+24I12*Asn1Int{12|54I9} 11|336r40 368r32
+28B12*Asn1Boolean{boolean}
+X 10 atm.ads
+16K9*atm 104l5 104e8 11|19b14 385l5 385t8
+21U14*accept_card 21^26 22i<c,atm_PI_accept_card>21 11|35b15 54l13 54t24
+21p26 account(19|41R6) 11|35b27 43r37
+27U14*reject_transaction 27^33 28i<c,atm_PI_reject_transaction>21 11|57b15
+. 76l13 76t31
+27p33 w(19|41R6) 11|57b34 61r31
+33U14*out_of_service 33^29 34i<c,atm_PI_out_of_service>21 11|79b15 99l13
+. 99t27
+33p29 w(19|41R6) 11|79b30 89r31 92r31
+39U14*abort_out 39^24 40i<c,atm_PI_abort_out>21 11|102b15 122l13 122t22
+39p24 w(19|41R6) 11|102b25 112r31 115r31
+45U14*amount 45^21 46i<c,atm_PI_amount>21 11|125b15 144l13 144t19
+45p21 amount(19|82I9) 11|125b22 137r36
+51U14*other_amount 51^27 52i<c,atm_PI_other_amount>21 11|147b15 166l13 166t25
+51p27 w(19|41R6) 11|147b28 159r31
+57U14*digit 57^20 58i<c,atm_PI_digit>21 11|169b15 188l13 188t18
+57p20 num(19|63I9) 11|169b21 179r33
+63U14*ok 63^17 64i<c,atm_PI_ok>21 11|191b15 210l13 210t15
+63p17 w(19|41R6) 11|191b18 201r31
+69U14*transaction_succeseeded 69^38 70i<c,atm_PI_transaction_succeseeded>21
+. 11|213b15 232l13 232t36
+69p38 w(19|41R6) 11|213b39 217r31
+75U14*out_msg 75^22 76b<c,atm_RI_out_msg>21 77r62
+75p22 msg(19|41R6)
+77U14*RI‹out_msg=77:62 11|265s25 275s25 283s25 293s25 304s25 312s25 325s25
+. 339s25 371s17
+77p25 msg(19|41R6)
+82U14*transaction 82^26 83b<c,atm_RI_transaction>21 84r67
+82p26 amount(19|82I9)
+84U14*RI‹transaction=84:67 11|290s25
+84p29 amount(19|82I9)
+89U14*display 89^22 90b<c,atm_RI_display>21 91r62
+89p22 msg(19|41R6)
+91U14*RI‹display=91:62 11|262s25 322s25 366s17
+91p25 msg(19|41R6)
+96U14*eject_card 96^25 97b<c,atm_RI_eject_card>21 98r63
+96p25 w(19|41R6)
+98U14*RI‹eject_card=98:63 11|272s25 301s25
+98p28 w(19|41R6)
+101U14*Check_Queue 101^26 102b<c,atm_RI_check_queue>21
+101p26 res(18|94E9)
+X 11 atm.adb
+20E10 States 20e146 23r17
+20n21 verifying_transaction{20E10} 38r22 60r22 82r22 105r22 128r22 150r22
+. 172r22 194r22 216r22 296r39
+20n44 read_amount‹amount_selection{20E10} 47r22 69r22 91r22 114r22 136r22
+. 158r22 181r22 203r22 225r22 328r39
+20n74 verifying_card{20E10} 42r22 65r22 86r22 109r22 132r22 154r22 176r22
+. 198r22 221r22 257r39
+20n90 read_amount‹enter_amount{20E10} 45r22 67r22 88r22 111r22 134r22 156r22
+. 178r22 200r22 223r22 342r39 374r31
+20n116 out_of_service{20E10} 40r22 63r22 84r22 107r22 130r22 152r22 174r22
+. 196r22 219r22 286r39
+20n132 card_released{20E10} 49r22 71r22 94r22 117r22 139r22 161r22 183r22
+. 205r22 227r22 278r39 307r39
+21R10 ctxt_Ty 29e15 30r19
+23e9*state{20E10} 37r23 59r23 81r23 104r23 127r23 149r23 171r23 193r23 215r23
+. 257m30 278m30 286m30 296m30 307m30 328m30 342m30 374m22
+24b9*initDone{boolean} 384m14
+25r9*account{19|41R6} 43m26
+26i9*num{19|63I9} 179m26 336r75
+27i9*amount{19|82I9} 137m26 290m45 336m30 336r55 368m22
+28r9*w{19|41R6} 61m26 89m26 92m26 112m26 115m26 159m26 201m26 217m26
+30r5 ctxt{21R10} 37r18 43m21 59r18 61m21 81r18 89m21 92m21 104r18 112m21
+. 115m21 127r18 137m21 149r18 159m21 171r18 179m21 193r18 201m21 215r18 217m21
+. 257m25 278m25 286m25 290m40 290r40 296m25 307m25 328m25 336m25 336r50 336r70
+. 342m25 368m17 374m17 384m9
+31i5 CS_Only{integer} 39r35 41r35 46r35 48r35 50r35 52r35 64r35 66r35 68r35
+. 70r35 72r35 74r35 83r35 85r35 87r35 95r35 97r35 106r35 108r35 110r35 118r35
+. 120r35 129r35 131r35 133r35 135r35 140r35 142r35 151r35 153r35 155r35 157r35
+. 162r35 164r35 173r35 175r35 177r35 182r35 184r35 186r35 195r35 197r35 199r35
+. 204r35 206r35 208r35 220r35 222r35 224r35 226r35 228r35 230r35 355r26
+32N5 read_amount‹reenter_START 267r33
+33N5 read_amount‹START 314r33
+34U15 runTransition 34>29 39s21 41s21 44s21 46s21 48s21 50s21 52s21 62s21
+. 64s21 66s21 68s21 70s21 72s21 74s21 83s21 85s21 87s21 90s21 93s21 95s21
+. 97s21 106s21 108s21 110s21 113s21 116s21 118s21 120s21 129s21 131s21 133s21
+. 135s21 138s21 140s21 142s21 151s21 153s21 155s21 157s21 160s21 162s21 164s21
+. 173s21 175s21 177s21 180s21 182s21 184s21 186s21 195s21 197s21 199s21 202s21
+. 204s21 206s21 208s21 218s21 220s21 222s21 224s21 226s21 228s21 230s21 235b15
+. 379l13 379t26 383s9
+34i29 Id{integer} 235b29 236r27
+236i9 trId{integer} 252r20 253r22 256m25 267m25 277m25 285m25 295m25 306m25
+. 314m25 327m25 332m25 341m25 346m25 350m25 356m25 373m17
+237r9 tmp36{19|41R6} 303m25 304m36 304r36
+238r9 tmp12{19|41R6} 338m25 339m36 339r36
+239r9 tmp1{19|41R6} 321m25 322m36 322r36
+240r9 tmp26{19|41R6} 274m25 275m36 275r36
+241r9 tmp18{19|41R6} 370m17 371m28 371r28
+242r9 tmp22{19|41R6} 264m25 265m36 265r36
+243r9 tmp20{19|41R6} 261m25 262m36 262r36
+244r9 tmp34{19|41R6} 300m25 301m39 301r39
+245r9 tmp38{19|41R6} 311m25 312m36 312r36
+246r9 tmp3{19|41R6} 324m25 325m36 325r36
+247r9 tmp28{19|41R6} 282m25 283m36 283r36
+248r9 tmp14{19|41R6} 365m17 366m28 366r28
+249r9 tmp24{19|41R6} 271m25 272m39 272r39
+250r9 tmp32{19|41R6} 292m25 293m36 293r36
+363L19 read_amount‹read_amount‹ntr_otr_amt 318r30 354r30
+376L19 next_transition 258r30 268r30 279r30 287r30 297r30 308r30 315r30 329r30
+. 333r30 343r30 347r30 351r30 357r30 361r22 375r22
+X 12 interfac.ads
+38K9*Interfaces 11|16w6 17r5 12|183e15
+54I9*Integer_64<long_long_integer>
+62M9*Unsigned_8
+X 13 system.ads
+37K9*System 11|3r6 4r5 13|156e11
+X 15 s-io.ads
+37K16*IO 11|3w13 4r12 15|64e14
+X 18 taste_basictypes.ads
+13K9*TASTE_BasicTypes 10|7w6 8r5 11|9w6 10r5 18|116e21
+94B9*asn1SccT_Boolean{9|28E12} 10|101r38
+X 19 taste_dataview.ads
+14K9*TASTE_Dataview 10|13w6 14r5 11|11w6 12r5 19|107e19
+39A9*asn1SccMyString_array{9|22A9}<integer>
+40I9*asn1SccMyString_length_index{integer}
+41R6*asn1SccMyString 10|21r42 27r43 33r39 39r34 51r37 63r27 69r48 75r34 77r37
+. 89r34 91r37 96r35 98r38 11|25r27 28r21 35r43 57r44 79r40 102r35 147r38
+. 191r28 213r49 237r25 238r25 239r24 240r25 241r25 242r25 243r25 244r25 245r25
+. 246r24 247r25 248r25 249r25 250r25 19|44e11
+42i5*Length{40I9} 11|261m125 264m145 271m58 274m110 282m114 292m142 300m58
+. 303m110 311m102 321m118 324m121 338m106 365m107 370m98
+43a5*Data{39A9} 11|261m35 264m35 271m35 274m35 282m35 292m35 300m35 303m35
+. 311m35 321m34 324m34 338m35 365m27 370m27
+63I9*asn1SccNum{9|24I12} 10|57r32 11|26r23 169r33
+82I9*asn1SccAmount{9|24I12} 10|45r36 82r41 84r44 11|27r26 125r37
+

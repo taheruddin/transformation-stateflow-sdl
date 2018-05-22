@@ -1,0 +1,28 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM durationsys;
+
+	/* CIF Keep Specific Geode PARAMNAMES inmsg */
+	SIGNAL inputmsg (T_Int32);
+
+	/* CIF Keep Specific Geode PARAMNAMES outmsg */
+	SIGNAL outputmsg (MyString);
+
+	CHANNEL c
+		FROM ENV TO durationsys WITH inputmsg;
+		FROM durationsys TO ENV WITH outputmsg;
+	ENDCHANNEL;
+
+	BLOCK durationsys;
+
+		SIGNALROUTE r
+			FROM ENV TO durationsys WITH inputmsg;
+			FROM durationsys TO ENV WITH outputmsg;
+
+		CONNECT c and r;
+
+		PROCESS durationsys REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

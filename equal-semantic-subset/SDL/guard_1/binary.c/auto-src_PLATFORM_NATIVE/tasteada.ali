@@ -1,0 +1,27 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+
+U tasteada%s		tasteada.ads		b6fa5f8a NE OO PK
+W guard_1%s		guard_1.adb		guard_1.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D adaasn1rtl.ads	20180522175356 157756a2 adaasn1rtl%s
+D guard_1.ads		20180522175342 95eeb79a guard_1%s
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180522175356 08c4ff04 taste_basictypes%s
+D taste_dataview.ads	20180522175356 8c5bf7f8 taste_dataview%s
+D tasteada.ads		20180522175356 2314e810 tasteada%s
+X 5 guard_1.ads
+16K9*guard_1 41e12 11|1w6
+21U14*get_data 22i<c,guard_1_PI_get_data>21
+27U14*check 28i<c,guard_1_PI_check>21
+X 11 tasteada.ads
+2K9*TasteAda 3l5 3e13
+

@@ -1,0 +1,39 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process parallel;
+    state aggregation S1;
+    substructure
+            state S11;
+            substructure
+                    /* CIF START (42, 56), (70, 35) */
+                    START;
+                        /* CIF NEXTSTATE (42, 111), (70, 35) */
+                        NEXTSTATE S111;
+                    /* CIF state (161, 55), (70, 35) */
+                    state S111;
+                    endstate;
+            endsubstructure;
+            state S12;
+            substructure
+                    /* CIF START (84, 51), (70, 35) */
+                    START;
+                        /* CIF NEXTSTATE (84, 106), (70, 35) */
+                        NEXTSTATE S121;
+                    /* CIF state (202, 50), (70, 35) */
+                    state S121;
+                    endstate;
+            endsubstructure;
+            /* CIF state (193, 94), (70, 35) */
+            state S12;
+            endstate;
+            /* CIF state (77, 95), (70, 35) */
+            state S11;
+            endstate;
+    endsubstructure;
+    /* CIF START (424, 57), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (424, 112), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (527, 57), (70, 35) */
+    state S1;
+    endstate;
+endprocess parallel;

@@ -1,0 +1,138 @@
+-- Automatically Generated - For use with AADL2GlueC only - Do NOT modify! --
+
+SUBPROGRAM tick_100ms
+END tick_100ms;
+
+SUBPROGRAM IMPLEMENTATION tick_100ms.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END tick_100ms.C;
+
+SUBPROGRAM coffee_tmr
+END coffee_tmr;
+
+SUBPROGRAM IMPLEMENTATION coffee_tmr.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_tmr.C;
+
+SUBPROGRAM coffee_RESET_tmr
+END coffee_RESET_tmr;
+
+SUBPROGRAM IMPLEMENTATION coffee_RESET_tmr.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_RESET_tmr.C;
+
+SUBPROGRAM coffee_SET_tmr
+FEATURES
+	duration:IN PARAMETER DataView::T_UInt32 {encoding=>NATIVE;};
+END coffee_SET_tmr;
+
+SUBPROGRAM IMPLEMENTATION coffee_SET_tmr.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_SET_tmr.C;
+
+SUBPROGRAM coffee_tmr1
+END coffee_tmr1;
+
+SUBPROGRAM IMPLEMENTATION coffee_tmr1.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_tmr1.C;
+
+SUBPROGRAM coffee_RESET_tmr1
+END coffee_RESET_tmr1;
+
+SUBPROGRAM IMPLEMENTATION coffee_RESET_tmr1.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_RESET_tmr1.C;
+
+SUBPROGRAM coffee_SET_tmr1
+FEATURES
+	duration:IN PARAMETER DataView::T_UInt32 {encoding=>NATIVE;};
+END coffee_SET_tmr1;
+
+SUBPROGRAM IMPLEMENTATION coffee_SET_tmr1.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_SET_tmr1.C;
+
+SUBPROGRAM coffee_tmr2
+END coffee_tmr2;
+
+SUBPROGRAM IMPLEMENTATION coffee_tmr2.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_tmr2.C;
+
+SUBPROGRAM coffee_RESET_tmr2
+END coffee_RESET_tmr2;
+
+SUBPROGRAM IMPLEMENTATION coffee_RESET_tmr2.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_RESET_tmr2.C;
+
+SUBPROGRAM coffee_SET_tmr2
+FEATURES
+	duration:IN PARAMETER DataView::T_UInt32 {encoding=>NATIVE;};
+END coffee_SET_tmr2;
+
+SUBPROGRAM IMPLEMENTATION coffee_SET_tmr2.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_SET_tmr2.C;
+
+SUBPROGRAM coffee_tmr3
+END coffee_tmr3;
+
+SUBPROGRAM IMPLEMENTATION coffee_tmr3.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_tmr3.C;
+
+SUBPROGRAM coffee_RESET_tmr3
+END coffee_RESET_tmr3;
+
+SUBPROGRAM IMPLEMENTATION coffee_RESET_tmr3.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_RESET_tmr3.C;
+
+SUBPROGRAM coffee_SET_tmr3
+FEATURES
+	duration:IN PARAMETER DataView::T_UInt32 {encoding=>NATIVE;};
+END coffee_SET_tmr3;
+
+SUBPROGRAM IMPLEMENTATION coffee_SET_tmr3.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END coffee_SET_tmr3.C;
+
+SUBPROGRAM check_queue
+FEATURES
+	res:IN PARAMETER DataView::T_Boolean {encoding=>NATIVE;};
+END check_queue;
+
+SUBPROGRAM IMPLEMENTATION check_queue.C
+PROPERTIES
+	FV_Name => "chip_timer_manager";
+	Source_Language => C;
+END check_queue.C;
+

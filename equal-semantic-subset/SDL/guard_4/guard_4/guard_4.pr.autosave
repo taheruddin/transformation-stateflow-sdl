@@ -1,0 +1,25 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process guard_4;
+    /* CIF TEXT (522, 158), (103, 36) */
+    dcl x MyReal;
+    /* CIF ENDTEXT */
+    /* CIF START (419, 41), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (419, 107), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (523, 40), (70, 35) */
+    state S1;
+    endstate;
+    /* CIF state (522, 101), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (419, 107), (70, 35) */
+    state S1;
+        /* CIF input (419, 162), (70, 35) */
+        input e(x);
+            /* CIF output (402, 217), (103, 35) */
+            output out_msg('S2');
+            /* CIF NEXTSTATE (419, 272), (70, 35) */
+            NEXTSTATE S2;
+    endstate;
+endprocess guard_4;

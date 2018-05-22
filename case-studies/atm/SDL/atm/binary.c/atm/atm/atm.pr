@@ -1,0 +1,145 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process atm;
+    state READ_AMOUNT;
+    substructure
+        in (reenter);
+        out (aborted);
+            /* CIF START (431, 209), (70, 35) */
+            START reenter ;
+                /* CIF join (448, 264), (35, 35) */
+                join ntr_otr_amt;
+            /* CIF START (216, 68), (70, 35) */
+            START;
+                /* CIF output (166, 123), (169, 35) */
+                output display('Select amount');
+                /* CIF output (122, 178), (258, 35) */
+                output out_msg('AMOUNT_SELECTION');
+                /* CIF NEXTSTATE (176, 228), (150, 35) */
+                NEXTSTATE AMOUNT_SELECTION;
+            /* CIF state (182, 22), (122, 35) */
+            state ENTER_AMOUNT;
+            endstate;
+            /* CIF state (17, 20), (150, 35) */
+            state AMOUNT_SELECTION;
+            endstate;
+            /* CIF state (427, 27), (70, 35) */
+            state *;
+                /* CIF input (411, 82), (101, 35) */
+                input abort_out(w);
+                    /* CIF return (444, 137), (35, 35) */
+                    return aborted;
+            endstate;
+            /* CIF state (260, 548), (122, 35) */
+            state ENTER_AMOUNT;
+                /* CIF input (198, 603), (84, 35) */
+                input digit(num);
+                    /* CIF task (146, 658), (187, 35) */
+                    task amount:=amount*10+num;
+                    /* CIF output (132, 713), (215, 35) */
+                    output out_msg('ENTER_AMOUNT');
+                    /* CIF NEXTSTATE (179, 763), (122, 35) */
+                    NEXTSTATE ENTER_AMOUNT;
+                /* CIF input (358, 603), (70, 35) */
+                input ok(w);
+                    /* CIF return (375, 658), (35, 35) */
+                    return ;
+            endstate;
+            /* CIF state (176, 228), (150, 35) */
+            state AMOUNT_SELECTION;
+                /* CIF input (0, 283), (123, 35) */
+                input amount(amount);
+                    /* CIF return (44, 338), (35, 35) */
+                    return ;
+                /* CIF input (258, 283), (127, 35) */
+                input other_amount(w);
+                    /* CIF label (273, 338), (96, 35) */
+                    ntr_otr_amt:
+                    /* CIF output (240, 388), (162, 35) */
+                    output display('Enter amount');
+                    /* CIF task (278, 443), (86, 35) */
+                    task amount:=0;
+                    /* CIF output (214, 498), (215, 35) */
+                    output out_msg('ENTER_AMOUNT');
+                    /* CIF NEXTSTATE (260, 548), (122, 35) */
+                    NEXTSTATE ENTER_AMOUNT;
+            endstate;
+    endsubstructure;
+    /* CIF TEXT (304, 99), (154, 74) */
+    dcl account MyString;
+    dcl amount Amount;
+    dcl w MyString;
+    dcl num Num;
+    /* CIF ENDTEXT */
+    /* CIF START (616, 90), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (588, 140), (126, 35) */
+        NEXTSTATE VERIFYING_CARD;
+    /* CIF state (65, 274), (125, 35) */
+    state CARD_RELEASED;
+    endstate;
+    /* CIF state (66, 320), (128, 35) */
+    state OUT_OF_SERVICE;
+    endstate;
+    /* CIF state (66, 175), (117, 35) */
+    state READ_AMOUNT;
+    endstate;
+    /* CIF state (66, 102), (126, 35) */
+    state VERIFYING_CARD;
+    endstate;
+    /* CIF state (63, 223), (178, 35) */
+    state VERIFYING_TRANSACTION;
+    endstate;
+    /* CIF state (260, 500), (178, 35) */
+    state VERIFYING_TRANSACTION;
+        /* CIF input (44, 555), (152, 35) */
+        input reject_transaction(w);
+            /* CIF output (33, 605), (175, 35) */
+            output display('Limit exceeded');
+            /* CIF output (0, 655), (241, 35) */
+            output out_msg('READ_AMOUNT->reenter');
+            /* CIF NEXTSTATE (26, 705), (188, 35) */
+            NEXTSTATE READ_AMOUNT via reenter;
+        /* CIF input (251, 555), (196, 35) */
+        input transaction_succeseeded(w);
+            /* CIF output (298, 605), (102, 35) */
+            output eject_card('');
+            /* CIF output (253, 655), (191, 35) */
+            output out_msg('CARD_RELEASED');
+            /* CIF NEXTSTATE (281, 705), (135, 35) */
+            NEXTSTATE CARD_RELEASED;
+    endstate;
+    /* CIF state (592, 295), (117, 35) */
+    state READ_AMOUNT;
+        /* CIF input (712, 350), (130, 35) */
+        input out_of_service(w);
+            /* CIF output (680, 400), (194, 35) */
+            output out_msg('OUT_OF_SERVICE');
+            /* CIF NEXTSTATE (713, 450), (128, 35) */
+            NEXTSTATE OUT_OF_SERVICE;
+        /* CIF connect (349, 350), (0, 35) */
+        connect ;
+            /* CIF output (276, 400), (146, 35) */
+            output transaction(amount);
+            /* CIF output (227, 450), (244, 35) */
+            output out_msg('VERIFYING_TRANSACTION');
+            /* CIF NEXTSTATE (260, 500), (178, 35) */
+            NEXTSTATE VERIFYING_TRANSACTION;
+        /* CIF connect (576, 350), (0, 35) */
+        connect aborted;
+            /* CIF output (525, 405), (102, 35) */
+            output eject_card('');
+            /* CIF output (480, 460), (191, 35) */
+            output out_msg('CARD_RELEASED');
+            /* CIF NEXTSTATE (513, 510), (125, 35) */
+            NEXTSTATE CARD_RELEASED;
+    endstate;
+    /* CIF state (588, 140), (126, 35) */
+    state VERIFYING_CARD;
+        /* CIF input (573, 195), (156, 35) */
+        input accept_card(account);
+            /* CIF output (541, 245), (219, 35) */
+            output out_msg('READ_AMOUNT');
+            /* CIF NEXTSTATE (592, 295), (117, 35) */
+            NEXTSTATE READ_AMOUNT;
+    endstate;
+endprocess atm;
