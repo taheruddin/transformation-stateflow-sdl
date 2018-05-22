@@ -1,0 +1,70 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process actions;
+    /* CIF TEXT (887, 65), (163, 56) */
+    dcl whatever MyString;
+    dcl x T_Int32;
+    /* CIF ENDTEXT */
+    /* CIF START (451, 151), (70, 35) */
+    START;
+        /* CIF task (451, 206), (70, 35) */
+        task x:=2;
+        /* CIF NEXTSTATE (451, 256), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (750, 11), (70, 35) */
+    state S4;
+    endstate;
+    /* CIF state (653, 11), (70, 35) */
+    state S3;
+    endstate;
+    /* CIF state (970, 148), (70, 35) */
+    state S3;
+        /* CIF input (946, 203), (118, 35) */
+        input push(whatever);
+            /* CIF output (953, 258), (103, 35) */
+            output out_msg(x);
+            /* CIF task (970, 313), (70, 35) */
+            task x:=4;
+            /* CIF NEXTSTATE (970, 368), (70, 35) */
+            NEXTSTATE S4;
+    endstate;
+    /* CIF state (699, 149), (70, 35) */
+    state S2;
+        /* CIF input (675, 204), (118, 35) */
+        input push(whatever);
+            /* CIF task (699, 259), (70, 35) */
+            task x:=3;
+            /* CIF output (682, 309), (103, 35) */
+            output out_msg(x);
+            /* CIF NEXTSTATE (699, 364), (70, 35) */
+            NEXTSTATE S3;
+    endstate;
+    /* CIF state (553, 11), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (561, 150), (70, 35) */
+    state S1;
+        /* CIF input (537, 205), (118, 35) */
+        input push(whatever);
+            /* CIF output (544, 260), (103, 35) */
+            output out_msg(x);
+            /* CIF NEXTSTATE (561, 315), (70, 35) */
+            NEXTSTATE S2;
+    endstate;
+    /* CIF state (452, 11), (70, 35) */
+    state S1;
+    endstate;
+    /* CIF state (840, 151), (70, 35) */
+    state S2;
+        /* CIF input (816, 206), (118, 35) */
+        input tap(whatever);
+            /* CIF task (840, 261), (70, 35) */
+            task x:=3;
+            /* CIF output (823, 311), (103, 35) */
+            output out_msg(x);
+            /* CIF NEXTSTATE (840, 366), (70, 35) */
+            NEXTSTATE S5;
+    endstate;
+    /* CIF state (852, 11), (70, 35) */
+    state S5;
+    endstate;
+endprocess actions;

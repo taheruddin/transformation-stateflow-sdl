@@ -1,0 +1,31 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM actions;
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL push (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL tap (MyString);
+
+	/* CIF Keep Specific Geode PARAMNAMES msg */
+	SIGNAL out_msg (T_Int32);
+
+	CHANNEL c
+		FROM ENV TO actions WITH push,tap;
+		FROM actions TO ENV WITH out_msg;
+	ENDCHANNEL;
+
+	BLOCK actions;
+
+		SIGNALROUTE r
+			FROM ENV TO actions WITH push,tap;
+			FROM actions TO ENV WITH out_msg;
+
+		CONNECT c and r;
+
+		PROCESS actions REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

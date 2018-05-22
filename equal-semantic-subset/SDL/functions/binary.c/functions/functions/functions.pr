@@ -1,0 +1,48 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process functions;
+    /* CIF TEXT (450, 23), (101, 80) */
+    dcl x T_Int32;
+    dcl y T_Int32;
+    /* CIF ENDTEXT */
+    /* CIF procedure (449, 222), (97, 56) */
+    procedure fodo;
+        /* CIF START (114, 40), (70, 35) */
+        START;
+            /* CIF decision (114, 95), (70, 50) */
+            decision x>9;
+                /* CIF ANSWER (69, 165), (70, 23) */
+                (true):
+                    /* CIF task (69, 208), (70, 35) */
+                    task y:=1;
+                    /* CIF return (86, 263), (35, 35) */
+                    return ;
+                /* CIF ANSWER (159, 165), (70, 23) */
+                ELSE:
+                    /* CIF task (159, 208), (70, 35) */
+                    task y:=0;
+                    /* CIF return (176, 263), (35, 35) */
+                    return ;
+            enddecision;
+    endprocedure;
+    /* CIF START (582, 21), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (582, 71), (70, 35) */
+        NEXTSTATE S1;
+    /* CIF state (582, 71), (70, 35) */
+    state S1;
+        /* CIF input (582, 126), (70, 35) */
+        input e(x);
+            /* CIF PROCEDURECALL (582, 181), (70, 35) */
+            call fodo;
+            /* CIF output (572, 236), (90, 35) */
+            output out_msg(y);
+            /* CIF NEXTSTATE (582, 291), (70, 35) */
+            NEXTSTATE S2;
+    endstate;
+    /* CIF state (449, 170), (70, 35) */
+    state S2;
+    endstate;
+    /* CIF state (452, 122), (70, 35) */
+    state S1;
+    endstate;
+endprocess functions;

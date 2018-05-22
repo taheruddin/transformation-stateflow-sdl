@@ -1,0 +1,95 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U functions%b		functions.adb		6b0ea6bc OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.unchecked_conversion%s
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.io%s		s-io.adb		s-io.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+
+U functions%s		functions.ads		d3499a33 EE NE OO PK IL
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-numaux.ads		20140801094828 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20151016131424 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20151020124036 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D adaasn1rtl.ads	20180517011901 157756a2 adaasn1rtl%s
+D functions.ads		20180517011849 c63ecc91 functions%s
+D functions.adb		20180517011849 243fbe9f functions%b
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-io.ads		20090409150019 9e42f74f system.io%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180517011901 08c4ff04 taste_basictypes%s
+X 1 ada.ads
+16K9*Ada 19e8 11|6r6 7r6
+X 4 a-numeri.ads
+16K13*Numerics 32e17 11|7r10
+X 6 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 11|7w19
+X 8 a-unccon.ads
+20v14*Unchecked_Conversion 11|6w10
+X 9 adaasn1rtl.ads
+9K9*adaasn1rtl 898e15 10|10w6 11r5 11|11w6 12r5
+24I12*Asn1Int{12|54I9} 11|36r27 42r27
+28B12*Asn1Boolean{boolean}
+X 10 functions.ads
+16K9*functions 35l5 35e14 11|17b14 97l5 97t14
+21U14*e 21^16 22i<c,functions_PI_e>21 11|49b15 60l13 60t14
+21p16 x(18|18I9) 11|49b17 55r31
+27U14*out_msg 27^22 28b<c,functions_RI_out_msg>21 29r59
+27p22 y(18|18I9)
+29U14*RI‹out_msg=29:59 11|77s25
+29p25 y(18|18I9)
+32U14*Check_Queue 32^26 33b<c,functions_RI_check_queue>21
+32p26 res(18|94E9)
+X 11 functions.adb
+18E10 States 18e28 21r17
+18n21 s2{18E10} 52r22 80r39
+18n25 s1{18E10} 54r22 71r39
+19R10 ctxt_Ty 25e15 26r19
+21e9*state{18E10} 51r23 71m30 80m30
+22b9*initDone{boolean} 96m14
+23i9*y{18|18I9} 36m22 42m22 77m41
+24i9*x{18|18I9} 34r23 55m26
+26r5 ctxt{19R10} 34r18 36m17 42m17 51r18 55m21 71m25 77m36 77r36 80m25 96m9
+27i5 CS_Only{integer} 53r35 58r35 82r26
+28U15 runTransition 28>29 53s21 56s21 58s21 63b15 91l13 91t26 95s9
+28i29 Id{integer} 63b29 64r27
+29U15 p‹fodo 30b15 46l13 46t19 75s25
+64i9 trId{integer} 66r20 67r22 70m25 79m25 83m25
+88L19 next_transition 72r30 81r30 84r30
+X 12 interfac.ads
+38K9*Interfaces 11|14w6 15r5 12|183e15
+54I9*Integer_64<long_long_integer>
+X 13 system.ads
+37K9*System 11|3r6 4r5 13|156e11
+X 15 s-io.ads
+37K16*IO 11|3w13 4r12 15|64e14
+X 18 taste_basictypes.ads
+13K9*TASTE_BasicTypes 10|7w6 8r5 13w6 14r5 11|9w6 10r5 18|116e21
+18I9*asn1SccT_Int32{9|24I12} 10|21r26 27r32 29r35 11|23r21 24r21 49r27
+94B9*asn1SccT_Boolean{9|28E12} 10|32r38
+

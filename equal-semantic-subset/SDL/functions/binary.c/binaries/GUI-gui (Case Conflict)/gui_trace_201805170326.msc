@@ -1,0 +1,15 @@
+mscdocument automade;
+language ASN.1;
+data dataview-uniq.asn;
+inst gui;
+msg e : (T-Int32);
+msg out_msg : (T-Int32);
+msc recorded;
+    gate in e,1(1) from gui;
+    gate out out_msg,2(0) to gui;
+    gui: instance;
+        out e,1(1) to env;
+        in out_msg,2(0) from env;
+    endinstance;
+endmsc;
+endmscdocument;
