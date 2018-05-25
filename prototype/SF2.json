@@ -1,0 +1,1 @@
+{"events":{"push":{"scope":"Input"}},"states":{"OFF":{"parent":"null","type":"basic"},"ON":{"parent":"null","type":"basic"}},"transitions":{"OFF":[{"destination":"ON","event":"push"}],"ON":[{"destination":"OFF","event":"push"}],"sourceless":[{"destination":"OFF","event":""}]}}
