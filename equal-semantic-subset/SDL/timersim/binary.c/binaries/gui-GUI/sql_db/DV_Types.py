@@ -1,0 +1,1 @@
+funcTypeLookup = {'T_UInt32__Get': 'asn1SccSint', 'T_UInt8__Get': 'asn1SccSint', 'T_Boolean__Get': 'flag', 'T_Int8__Get': 'asn1SccSint', 'T_Int32__Get': 'asn1SccSint', 'TASTE_Boolean__Get': 'flag'}

@@ -1,0 +1,41 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process timersys;
+    /* CIF TEXT (756, 110), (172, 99) */
+    dcl whatever T_Boolean;
+    
+    timer sdltmr;
+    /* CIF ENDTEXT */
+    /* CIF START (437, 20), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (437, 94), (70, 35) */
+        NEXTSTATE WAIT;
+    /* CIF state (859, 19), (70, 35) */
+    state READY;
+    endstate;
+    /* CIF state (622, 17), (70, 35) */
+    state WAIT;
+    endstate;
+    /* CIF state (736, 18), (71, 35) */
+    state TICKING;
+    endstate;
+    /* CIF state (624, 110), (71, 35) */
+    state TICKING;
+        /* CIF input (620, 165), (78, 35) */
+        input sdltmr;
+            /* CIF output (594, 220), (129, 35) */
+            output outputmsg(true);
+            /* CIF NEXTSTATE (624, 275), (70, 35) */
+            NEXTSTATE READY;
+    endstate;
+    /* CIF state (437, 94), (70, 35) */
+    state WAIT;
+        /* CIF input (400, 149), (145, 35) */
+        input inputmsg(whatever);
+            /* CIF PROCEDURECALL (388, 204), (169, 38) */
+            call set_timer(2000, sdltmr);
+            /* CIF output (408, 260), (129, 35) */
+            output outputmsg(false);
+            /* CIF NEXTSTATE (437, 310), (71, 35) */
+            NEXTSTATE TICKING;
+    endstate;
+endprocess timersys;

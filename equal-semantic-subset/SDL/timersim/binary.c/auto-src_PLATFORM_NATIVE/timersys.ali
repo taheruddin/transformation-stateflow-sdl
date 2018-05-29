@@ -1,0 +1,107 @@
+V "GNAT Lib v6"
+A -gnat2012
+P ZX
+
+RN
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U timersys%b		timersys.adb		31e23215 OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.unchecked_conversion%s
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.io%s		s-io.adb		s-io.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+W taste_dataview%s	taste_dataview.adb	taste_dataview.ali
+
+U timersys%s		timersys.ads		5d66505f EE NE OO PK IL
+W adaasn1rtl%s		adaasn1rtl.adb		adaasn1rtl.ali
+W taste_basictypes%s	taste_basictypes.adb	taste_basictypes.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-charac.ads		20070912115821 2d3ec45b ada.characters%s
+D a-chlat1.ads		20140225151544 66457d31 ada.characters.latin_1%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-numaux.ads		20140801094828 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20151016131424 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20151020124036 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D adaasn1rtl.ads	20180331101920 157756a2 adaasn1rtl%s
+D interfac.ads		20151118101227 4be8ce1b interfaces%s
+D system.ads		20151123113124 c6f79445 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-io.ads		20090409150019 9e42f74f system.io%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D taste_basictypes.ads	20180331101920 08c4ff04 taste_basictypes%s
+D taste_dataview.ads	20180331101920 4ff10863 taste_dataview%s
+D timersys.ads		20180331101859 481106fd timersys%s
+D timersys.adb		20180331101859 bf0de839 timersys%b
+X 1 ada.ads
+16K9*Ada 19e8 19|6r6 7r6
+X 4 a-numeri.ads
+16K13*Numerics 32e17 19|7r10
+X 6 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 19|7w19
+X 8 a-unccon.ads
+20v14*Unchecked_Conversion 19|6w10
+X 9 adaasn1rtl.ads
+9K9*adaasn1rtl 898e15 18|10w6 11r5 19|13w6 14r5
+24I12*Asn1Int{10|54I9}
+28B12*Asn1Boolean{boolean}
+X 10 interfac.ads
+38K9*Interfaces 183e15 19|16w6 17r5
+54I9*Integer_64<long_long_integer>
+X 11 system.ads
+37K9*System 156e11 19|3r6 4r5
+X 13 s-io.ads
+37K16*IO 64e14 19|3w13 4r12
+X 16 taste_basictypes.ads
+13K9*TASTE_BasicTypes 116e21 18|7w6 8r5 13w6 14r5 19|9w6 10r5
+37I9*asn1SccT_UInt32{9|24I12} 18|45r37 19|63r24
+94B9*asn1SccT_Boolean{9|28E12} 18|21r36 27r38 29r41 32r38 19|25r28 30r37
+. 64r24 65r24
+X 17 taste_dataview.ads
+14K9*TASTE_Dataview 41e19 19|11w6 12r5
+X 18 timersys.ads
+16K9*timersys 55l5 55e13 19|19b14 108l5 108t13
+21U14*inputmsg 21^23 22i<c,timersys_PI_inputmsg>21 19|30b15 43l13 43t21
+21p23 into(16|94E9) 19|30b24 38r38
+27U14*outputmsg 27^24 28b<c,timersys_RI_outputmsg>21 29r67
+27p24 outgo(16|94E9)
+29U14*RIÜoutputmsg=29:67 19|77s25 88s25
+29p27 outgo(16|94E9)
+32U14*Check_Queue 32^26 33b<c,timersys_RI_check_queue>21
+32p26 res(16|94E9)
+40U14*sdltmr 41i<c,timersys_PI_sdltmr>21 19|46b15 58l13 58t19
+45U14*Set_sdltmr 45^25 47b<c,timersys_RI_SET_sdltmr>21 19|85s25
+45p25 val(16|37I9)
+50U14*Reset_sdltmr 52b<c,timersys_RI_RESET_sdltmr>21
+X 19 timersys.adb
+20E10 States 20e42 23r17
+20n21 ready{20E10} 33r22 49r22 80r39
+20n28 ticking{20E10} 35r22 51r22 91r39
+20n37 wait{20E10} 37r22 53r22 72r39
+21R10 ctxt_Ty 26e15 27r19
+23e9*state{20E10} 32r23 48r23 72m30 80m30 91m30
+24b9*initDone{boolean} 107m14
+25b9*whatever{16|94E9} 38m26
+27r5 ctxt{21R10} 32r18 38m21 48r18 72m25 80m25 91m25 107m9
+28i5 CS_Only{integer} 34r35 36r35 41r35 50r35 54r35 56r35 93r26
+29U15 runTransition 29>29 34s21 36s21 39s21 41s21 50s21 52s21 54s21 56s21
+. 61b15 102l13 102t26 106s9
+29i29 Id{integer} 61b29 62r27
+62i9 trId{integer} 67r20 68r22 71m25 79m25 90m25 94m25
+63i9 tmp4{16|37I9} 84m25 85m36 85r36
+64b9 tmp1{16|94E9} 76m25 77m38 77r38
+65b9 tmp7{16|94E9} 87m25 88m38 88r38
+99L19 next_transition 73r30 81r30 92r30 95r30
+

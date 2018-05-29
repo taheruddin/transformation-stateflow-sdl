@@ -1,0 +1,28 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM timersys;
+
+	/* CIF Keep Specific Geode PARAMNAMES into */
+	SIGNAL inputmsg (T_Boolean);
+
+	/* CIF Keep Specific Geode PARAMNAMES outgo */
+	SIGNAL outputmsg (T_Boolean);
+
+	CHANNEL c
+		FROM ENV TO timersys WITH inputmsg;
+		FROM timersys TO ENV WITH outputmsg;
+	ENDCHANNEL;
+
+	BLOCK timersys;
+
+		SIGNALROUTE r
+			FROM ENV TO timersys WITH inputmsg;
+			FROM timersys TO ENV WITH outputmsg;
+
+		CONNECT c and r;
+
+		PROCESS timersys REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

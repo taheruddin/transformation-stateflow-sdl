@@ -1,0 +1,15 @@
+--  This file was generated automatically: DO NOT MODIFY IT !
+
+--  This file contains the description of the system distribution.
+--  It is an input file for the TASTE ORCHESTRATOR
+
+* chip PLATFORM_NATIVE
+gui
+timersys
+chip_timer_manager
+chip_taste_api
+vt_gui_outputmsg
+vt_gui_gui_polling_gui
+vt_timersys_inputmsg
+vt_timersys_sdltmr
+vt_chip_timer_manager_tick_100ms
