@@ -1,0 +1,23 @@
+/* CIF Keep Specific Geode ASNFilename 'dataview-uniq.asn' */
+USE Datamodel;
+SYSTEM lamp;
+
+	/* CIF Keep Specific Geode PARAMNAMES w */
+	SIGNAL push (MyString);
+
+	CHANNEL c
+		FROM ENV TO lamp WITH push;
+	ENDCHANNEL;
+
+	BLOCK lamp;
+
+		SIGNALROUTE r
+			FROM ENV TO lamp WITH push;
+
+		CONNECT c and r;
+
+		PROCESS lamp REFERENCED;
+
+	ENDBLOCK;
+
+ENDSYSTEM;

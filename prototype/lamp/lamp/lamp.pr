@@ -1,0 +1,23 @@
+/* CIF PROCESS (250, 150), (150, 75) */
+process lamp;
+    /* CIF TEXT (448, 3), (114, 45) */
+    dcl w MyString;
+    /* CIF ENDTEXT */
+    /* CIF START (320, 10), (70, 35) */
+    START;
+        /* CIF NEXTSTATE (320, 60), (70, 35) */
+        NEXTSTATE OFF;
+    /* CIF state (450, 62), (70, 35) */
+    state OFF;
+    endstate;
+    /* CIF state (320, 60), (70, 35) */
+    state OFF;
+        /* CIF input (320, 115), (70, 35) */
+        input push(w);
+            /* CIF NEXTSTATE (320, 170), (70, 35) */
+            NEXTSTATE ON;
+    endstate;
+    /* CIF state (451, 119), (70, 35) */
+    state ON;
+    endstate;
+endprocess lamp;
